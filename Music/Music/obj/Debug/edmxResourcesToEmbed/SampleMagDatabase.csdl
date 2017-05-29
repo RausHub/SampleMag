@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleMagDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Sample">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Content_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Meta_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Count_Up" Type="Int32" />
+    <Property Name="Count_Down" Type="Int32" />
+    <Property Name="Last_Update" Type="DateTime" Precision="3" />
+    <Property Name="Lifetime" Type="Int32" />
+    <Property Name="Posted_on" Type="DateTime" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Sample_User" FromRole="Sample" ToRole="User" />
+    <NavigationProperty Name="Vote" Relationship="Self.FK_Vote_Sample" FromRole="Sample" ToRole="Vote" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsLocked" Type="Boolean" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Profile_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Language_Preference_ID" Type="Int32" />
+    <Property Name="Timezone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Profile_Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="User_Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="User_Status_ID" Type="Int32" />
+    <Property Name="User_Type_ID" Type="Int32" />
+    <Property Name="Vote_Count_Up" Type="Int32" />
+    <Property Name="Vote_Count_Down" Type="Int32" />
+    <NavigationProperty Name="Sample" Relationship="Self.FK_Sample_User" FromRole="User" ToRole="Sample" />
+    <NavigationProperty Name="Vote" Relationship="Self.FK_Vote_User" FromRole="User" ToRole="Vote" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="SampleId" Type="Int32" />
+    <Property Name="Vote_Value" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Of_Vote" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Sample" Relationship="Self.FK_Vote_Sample" FromRole="Vote" ToRole="Sample" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Vote_User" FromRole="Vote" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Sample_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Sample" Type="Self.Sample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sample">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vote_Sample">
+    <End Role="Sample" Type="Self.Sample" Multiplicity="0..1" />
+    <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sample">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="SampleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vote_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SampleMagDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sample" EntityType="Self.Sample" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="Vote" EntityType="Self.Vote" />
+    <AssociationSet Name="FK_Sample_User" Association="Self.FK_Sample_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Sample" EntitySet="Sample" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vote_Sample" Association="Self.FK_Vote_Sample">
+      <End Role="Sample" EntitySet="Sample" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vote_User" Association="Self.FK_Vote_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

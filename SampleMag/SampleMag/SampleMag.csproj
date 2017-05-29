@@ -209,6 +209,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\downvote.png" />
+    <Content Include="Images\EdSheeranProfilePic %281%29.jpg" />
+    <Content Include="Images\EdSheeranShape.jpg" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\logo-250x50.png" />
+    <Content Include="Images\logo-main-544x184.png" />
+    <Content Include="Images\logo-nav-176x35.png" />
+    <Content Include="Images\logo-nav-white-176x35.png" />
+    <Content Include="Images\logo176x35.png" />
+    <Content Include="Images\nav-logo-176x50.png" />
+    <Content Include="Images\Samplemag-logo-544x184.png" />
+    <Content Include="Images\Samplemag-logo-red-544x184.png" />
+    <Content Include="Images\samplemag-white-logo-176x45.png" />
+    <Content Include="Images\upvote.png" />
     <Content Include="SampleMagEF.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleMagEF.edmx</DependentUpon>
@@ -1011,6 +1025,9 @@
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
     <Content Include="Scripts\libs\respond.js" />
     <Content Include="Scripts\libs\respond.min.js" />
+    <Content Include="Scripts\Spa\app.js" />
+    <Content Include="Scripts\Spa\Sample\create.html" />
+    <Content Include="Scripts\Spa\Sample\listsamples.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1022,16 +1039,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\libs\version.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Spa\User\" />
-    <Folder Include="Views\Sample\" />
-    <Folder Include="Views\User\" />
-    <Folder Include="Views\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,150 @@
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\ApplicationInsights.config
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\csc.exe
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\csc.exe.config
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\csc.rsp
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\csi.exe
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\csi.rsp
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.AppContext.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.Collections.Immutable.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.IO.FileSystem.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\vbc.exe
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\vbc.exe.config
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\vbc.rsp
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\VBCSCompiler.exe
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\roslyn\VBCSCompiler.exe.config
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Music.dll.config
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Music.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Music.pdb
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Antlr3.Runtime.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.Web.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.WindowsServer.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.ApplicationInsights.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Newtonsoft.Json.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Net.Http.Formatting.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Helpers.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Http.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Http.WebHost.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Mvc.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Optimization.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Razor.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.Deployment.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.Razor.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\WebGrease.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Newtonsoft.Json.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Net.Http.Formatting.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Helpers.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Http.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Http.WebHost.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Mvc.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Optimization.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.Razor.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.Deployment.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\System.Web.WebPages.Razor.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Antlr3.Runtime.pdb
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.ApplicationInsights.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.WindowsServer.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\bin\Microsoft.AI.Web.xml
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\obj\Debug\Music.csprojResolveAssemblyReference.cache
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\obj\Debug\Music.dll
+c:\users\jelle\documents\visual studio 2017\Projects\Music\Music\obj\Debug\Music.pdb
+D:\SampleMag\Music\Music\bin\ApplicationInsights.config
+D:\SampleMag\Music\Music\bin\roslyn\csc.exe
+D:\SampleMag\Music\Music\bin\roslyn\csc.exe.config
+D:\SampleMag\Music\Music\bin\roslyn\csc.rsp
+D:\SampleMag\Music\Music\bin\roslyn\csi.exe
+D:\SampleMag\Music\Music\bin\roslyn\csi.rsp
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SampleMag\Music\Music\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SampleMag\Music\Music\bin\roslyn\System.AppContext.dll
+D:\SampleMag\Music\Music\bin\roslyn\System.Collections.Immutable.dll
+D:\SampleMag\Music\Music\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SampleMag\Music\Music\bin\roslyn\System.IO.FileSystem.dll
+D:\SampleMag\Music\Music\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SampleMag\Music\Music\bin\roslyn\System.Reflection.Metadata.dll
+D:\SampleMag\Music\Music\bin\roslyn\vbc.exe
+D:\SampleMag\Music\Music\bin\roslyn\vbc.exe.config
+D:\SampleMag\Music\Music\bin\roslyn\vbc.rsp
+D:\SampleMag\Music\Music\bin\roslyn\VBCSCompiler.exe
+D:\SampleMag\Music\Music\bin\roslyn\VBCSCompiler.exe.config
+D:\SampleMag\Music\Music\bin\Music.dll.config
+D:\SampleMag\Music\Music\bin\Music.dll
+D:\SampleMag\Music\Music\bin\Music.pdb
+D:\SampleMag\Music\Music\bin\Antlr3.Runtime.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.DependencyCollector.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.Web.dll
+D:\SampleMag\Music\Music\bin\Microsoft.AI.WindowsServer.dll
+D:\SampleMag\Music\Music\bin\Microsoft.ApplicationInsights.dll
+D:\SampleMag\Music\Music\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SampleMag\Music\Music\bin\Microsoft.Web.Infrastructure.dll
+D:\SampleMag\Music\Music\bin\Newtonsoft.Json.dll
+D:\SampleMag\Music\Music\bin\System.Net.Http.Formatting.dll
+D:\SampleMag\Music\Music\bin\System.Web.Helpers.dll
+D:\SampleMag\Music\Music\bin\System.Web.Http.dll
+D:\SampleMag\Music\Music\bin\System.Web.Http.WebHost.dll
+D:\SampleMag\Music\Music\bin\System.Web.Mvc.dll
+D:\SampleMag\Music\Music\bin\System.Web.Optimization.dll
+D:\SampleMag\Music\Music\bin\System.Web.Razor.dll
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.Deployment.dll
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.dll
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.Razor.dll
+D:\SampleMag\Music\Music\bin\WebGrease.dll
+D:\SampleMag\Music\Music\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SampleMag\Music\Music\bin\Newtonsoft.Json.xml
+D:\SampleMag\Music\Music\bin\System.Net.Http.Formatting.xml
+D:\SampleMag\Music\Music\bin\System.Web.Helpers.xml
+D:\SampleMag\Music\Music\bin\System.Web.Http.xml
+D:\SampleMag\Music\Music\bin\System.Web.Http.WebHost.xml
+D:\SampleMag\Music\Music\bin\System.Web.Mvc.xml
+D:\SampleMag\Music\Music\bin\System.Web.Optimization.xml
+D:\SampleMag\Music\Music\bin\System.Web.Razor.xml
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.xml
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.Deployment.xml
+D:\SampleMag\Music\Music\bin\System.Web.WebPages.Razor.xml
+D:\SampleMag\Music\Music\bin\Antlr3.Runtime.pdb
+D:\SampleMag\Music\Music\bin\Microsoft.ApplicationInsights.xml
+D:\SampleMag\Music\Music\bin\Microsoft.AI.DependencyCollector.xml
+D:\SampleMag\Music\Music\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SampleMag\Music\Music\bin\Microsoft.AI.WindowsServer.xml
+D:\SampleMag\Music\Music\bin\Microsoft.AI.Web.xml
+D:\SampleMag\Music\Music\obj\Debug\Music.csprojResolveAssemblyReference.cache
+D:\SampleMag\Music\Music\obj\Debug\Music.dll
+D:\SampleMag\Music\Music\obj\Debug\Music.pdb
+D:\SampleMag\Music\Music\bin\EntityFramework.dll
+D:\SampleMag\Music\Music\bin\EntityFramework.SqlServer.dll
+D:\SampleMag\Music\Music\bin\EntityFramework.xml
+D:\SampleMag\Music\Music\bin\EntityFramework.SqlServer.xml
