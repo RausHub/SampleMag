@@ -19,6 +19,10 @@
                 templateUrl: "scripts/app/sample/create.html",
                 controller: "createCtrl"
             })
+            .when("/samples", {
+                templateUrl: "scripts/app/sample/listsample.html",
+                controller: "listsampleCtrl"
+            })
             .otherwise({ redirectTo: "/" });
 
         $locationProvider.hashPrefix('');

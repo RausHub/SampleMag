@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Music
+namespace Music.EF
 {
     using System;
     using System.Collections.Generic;
