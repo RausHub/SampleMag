@@ -4,21 +4,19 @@
 <head>
    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    <link rel="stylesheet" href="bootstrap.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js">
-   </script>
+    </script>
     <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
-   
-    <link rel="stylesheet" href="bootstrap.css">
-    
     <script src="app.js"></script>
-    
-    
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    
+ 
     <script>
     // Initialize Firebase
     var config = {
@@ -57,18 +55,18 @@
 
 <body style="width: 40%; margin: 0 auto">
     <!--    Header -->
-    <h1 class="text-center"><img src="images/logo-main-544x184.png"></h1>
+    <h1 class="text-center"><a href="/"><img src="images/logo-main-544x184.png"></a></h1>
     
     <div class="navbar navbar-fixed-top">
         <div class="container">   
             <ul class="nav navbar-nav navbar-right">
         <li>
-            <a href="/create">Create</a>
+            <a href="#!/create">Create</a>
         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
         <li>
-        <a href="/login">Log in</a>
+        <a href="#!/login">Log in</a>
         </li>
             </ul>
     </div>
@@ -76,6 +74,15 @@
     
     <!-- View -->
     <div ng-view></div>
+    <br>
+<br>
+<hr>
+   
+       <div class="footer">
+    <p> © <time datetime="YYYY"></time> 2017 SampleMag - All rights reserved</p>   
+</div>   
+    
+    
 </body>
 
 </html>

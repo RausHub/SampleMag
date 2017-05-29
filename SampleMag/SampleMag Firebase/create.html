@@ -1,42 +1,4 @@
-<style>
-    button{
-        border:none;
-        background:none;
-        padding:0;
-       
-    }
-
-</style>
-    
-
- <!-- view -->
-    
-    
-
-    <div class="sample">
-
-        <ul ng-repeat="post in posts | orderBy: 'votes'">
-            <li>
-                <div class="sampleHeader">
-                    <h2>{{post.artist}} - {{post.title}}</h2>
-                    <h6><a>UPVOTES: </a>{{post.votes}}<a> LOCATION: </a>{{post.location}}</h6>
-                </div>
-                <div class="postimage">
-                    <!--{{post.content}} -->
-                    <img src="images/EdSheeranShape.jpg" width="500" height="500">
-                </div>
-                <div class="user">
-                    <button ng-click="addVote(post)"><img ng-src="images/upvote.png" style="border:none"></button>
-                    <button ng-click="deletePost(post)"><img src="images/downvote.png"></button>
-                    
-                </div>
-                <br>
-            </li>
-        </ul>
-<br>
-<hr>
-<br>   
-   <h1>Create a new sample:</h1> 
+<h1>Share a video:</h1> 
 <br>
   <!-- create -->
    <div>
@@ -53,7 +15,7 @@
         </div>
         <!--        Content -->
         <div class="form-group">
-            <label class="control-label" for="focusedInput">Content</label>
+            <label class="control-label" for="focusedInput">Video</label>
             <input type="video" ng-model="post.content" class="form-control">
         </div>
         <!--        Description -->
@@ -71,13 +33,7 @@
         <button ng-click="savePost(post)" class="btn btn-success btn-block">Save</button>
     </form>
 </div>
-<br>
-<br>
-<hr>
-      
-<div class="footer">
-    <p> © <time datetime="YYYY"></time> 2017 SampleMag - All rights reserved</p>   
-</div>     
+
    
    
   
