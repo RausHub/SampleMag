@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="SampleMag">
+
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js">
+   </script>
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+   
+    <link rel="stylesheet" href="bootstrap.css">
+    
+    <script src="app.js"></script>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD43y2Z0VUOrKuqz7s_7B3joOX0XFeElwY",
+        authDomain: "samplemag-2696a.firebaseapp.com",
+        databaseURL: "https://samplemag-2696a.firebaseio.com",
+        projectId: "samplemag-2696a",
+        storageBucket: "samplemag-2696a.appspot.com",
+        messagingSenderId: "612522450202"
+    };
+    firebase.initializeApp(config);
+</script>
+    
+    <style>
+    h6{
+            color:black;
+        }
+        body{
+            background-color:white;
+        }
+        h2{
+            color:#e20026;
+        }
+        a{
+            color:black;
+        }
+        ul{
+            list-style-type:none;
+        }
+        
+    </style>
+    
+    <title>SampleMag</title>
+    
+</head>
+
+<body style="width: 40%; margin: 0 auto">
+    <!--    Header -->
+    <h1 class="text-center"><img src="images/logo-main-544x184.png"></h1>
+    
+    <div class="navbar navbar-fixed-top">
+        <div class="container">   
+            <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/create">Create</a>
+        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+        <li>
+        <a href="/login">Log in</a>
+        </li>
+            </ul>
+    </div>
+</div>
+    
+    <!-- View -->
+    <div ng-view></div>
+</body>
+
+</html>
