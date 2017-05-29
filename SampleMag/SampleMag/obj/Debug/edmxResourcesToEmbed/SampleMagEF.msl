@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SampleMagDatabaseModelStoreContainer" CdmEntityContainer="SampleMagDatabaseEntities">
+    <EntitySetMapping Name="Sample">
+      <EntityTypeMapping TypeName="SampleMagDatabaseModel.Sample">
+        <MappingFragment StoreEntitySet="Sample">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Posted_on" ColumnName="Posted_on" />
+          <ScalarProperty Name="Lifetime" ColumnName="Lifetime" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Count_Down" ColumnName="Count_Down" />
+          <ScalarProperty Name="Count_Up" ColumnName="Count_Up" />
+          <ScalarProperty Name="Meta_Value" ColumnName="Meta_Value" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Content_Path" ColumnName="Content_Path" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="SampleMagDatabaseModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Vote_Count_Down" ColumnName="Vote_Count_Down" />
+          <ScalarProperty Name="Vote_Count_Up" ColumnName="Vote_Count_Up" />
+          <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
+          <ScalarProperty Name="User_Status_ID" ColumnName="User_Status_ID" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="User_Bio" ColumnName="User_Bio" />
+          <ScalarProperty Name="Profile_Picture" ColumnName="Profile_Picture" />
+          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+          <ScalarProperty Name="Language_Preference_ID" ColumnName="Language_Preference_ID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote">
+      <EntityTypeMapping TypeName="SampleMagDatabaseModel.Vote">
+        <MappingFragment StoreEntitySet="Vote">
+          <ScalarProperty Name="Time_Of_Vote" ColumnName="Time_Of_Vote" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Vote_Value" ColumnName="Vote_Value" />
+          <ScalarProperty Name="SampleId" ColumnName="SampleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

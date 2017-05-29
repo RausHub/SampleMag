@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -52,6 +58,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -152,64 +160,118 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Converters\SampleConverter.cs" />
+    <Compile Include="Models\Converters\UserConverter.cs" />
+    <Compile Include="Models\Converters\VoteConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sample.cs">
+      <DependentUpon>SampleMagEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleMagEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleMagEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleMagEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleMagEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleMagEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleMagEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\SampleService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\VoteService.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>SampleMagEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vote.cs">
+      <DependentUpon>SampleMagEF.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SampleMagDatabase.mdf" />
+    <Content Include="App_Data\SampleMagDatabase_log.ldf">
+      <DependentUpon>SampleMagDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\angular-animate.js" />
-    <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-aria.js" />
-    <Content Include="Scripts\angular-aria.min.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
-    <Content Include="Scripts\angular-csp.css" />
-    <Content Include="Scripts\angular-loader.js" />
-    <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-message-format.js" />
-    <Content Include="Scripts\angular-message-format.min.js" />
-    <Content Include="Scripts\angular-messages.js" />
-    <Content Include="Scripts\angular-messages.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-parse-ext.js" />
-    <Content Include="Scripts\angular-parse-ext.min.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular-route.js" />
-    <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular-sanitize.min.js" />
-    <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular-touch.js" />
-    <Content Include="Scripts\angular-touch.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="SampleMagEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleMagEF.edmx</DependentUpon>
+      <LastGenOutput>SampleMagEF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SampleMagEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleMagEF.edmx</DependentUpon>
+      <LastGenOutput>SampleMagEF.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\libs\angular-animate.js" />
+    <Content Include="Scripts\libs\angular-animate.min.js" />
+    <Content Include="Scripts\libs\angular-aria.js" />
+    <Content Include="Scripts\libs\angular-aria.min.js" />
+    <Content Include="Scripts\libs\angular-cookies.js" />
+    <Content Include="Scripts\libs\angular-cookies.min.js" />
+    <Content Include="Scripts\libs\angular-csp.css" />
+    <Content Include="Scripts\libs\angular-loader.js" />
+    <Content Include="Scripts\libs\angular-loader.min.js" />
+    <Content Include="Scripts\libs\angular-message-format.js" />
+    <Content Include="Scripts\libs\angular-message-format.min.js" />
+    <Content Include="Scripts\libs\angular-messages.js" />
+    <Content Include="Scripts\libs\angular-messages.min.js" />
+    <Content Include="Scripts\libs\angular-mocks.js" />
+    <Content Include="Scripts\libs\angular-parse-ext.js" />
+    <Content Include="Scripts\libs\angular-parse-ext.min.js" />
+    <Content Include="Scripts\libs\angular-resource.js" />
+    <Content Include="Scripts\libs\angular-resource.min.js" />
+    <Content Include="Scripts\libs\angular-route.js" />
+    <Content Include="Scripts\libs\angular-route.min.js" />
+    <Content Include="Scripts\libs\angular-sanitize.js" />
+    <Content Include="Scripts\libs\angular-sanitize.min.js" />
+    <Content Include="Scripts\libs\angular-scenario.js" />
+    <Content Include="Scripts\libs\angular-touch.js" />
+    <Content Include="Scripts\libs\angular-touch.min.js" />
+    <Content Include="Scripts\libs\angular.js" />
+    <Content Include="Scripts\libs\angular.min.js" />
+    <Content Include="Scripts\libs\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\errors.json" />
-    <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\angular-touch.min.js.map" />
-    <Content Include="Scripts\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\angular-route.min.js.map" />
-    <Content Include="Scripts\angular-resource.min.js.map" />
-    <Content Include="Scripts\angular-parse-ext.min.js.map" />
-    <Content Include="Scripts\angular-messages.min.js.map" />
-    <Content Include="Scripts\angular-message-format.min.js.map" />
-    <Content Include="Scripts\angular-loader.min.js.map" />
-    <Content Include="Scripts\angular-cookies.min.js.map" />
-    <Content Include="Scripts\angular-aria.min.js.map" />
-    <Content Include="Scripts\angular-animate.min.js.map" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\libs\errors.json" />
+    <Content Include="Scripts\libs\angular.min.js.map" />
+    <Content Include="Scripts\libs\angular-touch.min.js.map" />
+    <Content Include="Scripts\libs\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\libs\angular-route.min.js.map" />
+    <Content Include="Scripts\libs\angular-resource.min.js.map" />
+    <Content Include="Scripts\libs\angular-parse-ext.min.js.map" />
+    <Content Include="Scripts\libs\angular-messages.min.js.map" />
+    <Content Include="Scripts\libs\angular-message-format.min.js.map" />
+    <Content Include="Scripts\libs\angular-loader.min.js.map" />
+    <Content Include="Scripts\libs\angular-cookies.min.js.map" />
+    <Content Include="Scripts\libs\angular-aria.min.js.map" />
+    <Content Include="Scripts\libs\angular-animate.min.js.map" />
+    <EntityDeploy Include="SampleMagEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleMagEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SampleMagEF.edmx.diagram">
+      <DependentUpon>SampleMagEF.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\libs\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -939,16 +1001,16 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\libs\jquery-1.10.2.js" />
+    <Content Include="Scripts\libs\jquery-1.10.2.min.js" />
+    <None Include="Scripts\libs\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\libs\jquery.validate.js" />
+    <Content Include="Scripts\libs\jquery.validate.min.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libs\modernizr-2.6.2.js" />
+    <Content Include="Scripts\libs\respond.js" />
+    <Content Include="Scripts\libs\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -963,11 +1025,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\version.json" />
+    <Content Include="Scripts\libs\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Scripts\Spa\User\" />
+    <Folder Include="Views\Sample\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -982,7 +1046,16 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\libs\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleMag.Entity\SampleMag.Entity.csproj">
+      <Project>{95914b6d-86da-4e36-b470-eabb0e73df0f}</Project>
+      <Name>SampleMag.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
