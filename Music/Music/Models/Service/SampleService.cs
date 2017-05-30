@@ -12,13 +12,15 @@ namespace Music.Models.Service
         public static Sample GetSample(int id)
         {
             ef.Configuration.LazyLoadingEnabled = false;
-            return ef.Sample.Where(x => x.Id == id).FirstOrDefault();
+            var s = ef.Sample.Where(x => x.Id == id).FirstOrDefault();
+            if (s != null & s.UserID > 0) s.User = UserService.GetUser((int)s.UserID);
+            return s;
         }
 
         public static List<Sample> GetAll()
         {
             ef.Configuration.LazyLoadingEnabled = false;
-            return ef.Sample.ToList();
+            return ef.Sample.Include("User").ToList();
         }
 
         public static void Create(Sample s)

@@ -17,7 +17,8 @@ namespace Music
                 "~/Scripts/respond.src.js",
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
-                "~/Scripts/angular-cookies.js"
+                "~/Scripts/angular-cookies.js",
+                "~/Scripts/angular-resource.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/spa").Include(

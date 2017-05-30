@@ -3,6 +3,11 @@
 
     app.controller('listsampleCtrl', listsampleCtrl);
 
+    app.factory("sampleService", function () {
+        return $resource('api/sample/:sample',
+            { sample: "@sample" });
+    });    
+
     listsampleCtrl.$inject = ['$scope','$http'];
 
     function listsampleCtrl($scope,$http) {
@@ -20,6 +25,8 @@
         }
 
         onInit();
+
+        $scope.detail = sampleService.get({ sample: parseInt($scope.sampleId) });
     }
 
 })(angular.module('app'));

@@ -1,9 +1,11 @@
-﻿h6 {
-    color: black;
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
 }
 
-body {
-    background-color: white;
+h6 {
+    color: black;
 }
 
 h2 {
@@ -24,6 +26,7 @@ button {
     padding: 0;
 }
 
-.body-content{
-    display: inline-block;
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
 }
