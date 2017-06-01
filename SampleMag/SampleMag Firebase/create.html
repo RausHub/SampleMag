@@ -1,7 +1,10 @@
-<h1>Share a video:</h1> 
 <br>
+ <br>
+ 
   <!-- create -->
-   <div>
+   <div  style="width: 40%; margin: 0 auto">
+   <h1>Share a video:</h1> 
+<br>
     <form>
         <!--        Title-->
         <div class="form-group">
@@ -13,6 +16,17 @@
             <label class="control-label" for="focusedInput">Artist</label>
             <input type="text" ng-model="post.artist" class="form-control">
         </div>
+        <!--        Category -->
+        <div class="form-group">
+            <label class="control-label">Category</label>
+            <select class="form-control" ng-model="post.category">
+            <option value="Alternative">Alternative</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Hiphop">Hiphop</option>
+            <option value="Pop">Pop</option>
+            </select>
+        </div>
+        
         <!--        Content -->
         <div class="form-group">
             <label class="control-label" for="focusedInput">Video</label>
