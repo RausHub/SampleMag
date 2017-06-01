@@ -294,6 +294,7 @@
     <Content Include="Scripts\app\sample\createCtrl.js" />
     <Content Include="Scripts\app\sample\listsample.html" />
     <Content Include="Scripts\app\sample\listsampleCtrl.js" />
+    <Content Include="Scripts\app\sample\sampleService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

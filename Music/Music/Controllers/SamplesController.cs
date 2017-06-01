@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Music.EF;
 using Music.Models.Service;
+using Newtonsoft.Json;
 
 namespace Music.Controllers
 {
@@ -19,9 +17,11 @@ namespace Music.Controllers
         private SampleMagDatabaseEntities db = new SampleMagDatabaseEntities();
 
         // GET: api/Samples
-        public List<Sample> GetSample()
+        public IQueryable<Sample> GetSample()
         {
-            return SampleService.GetAll();
+            db.Configuration.LazyLoadingEnabled = false;
+
+            return db.Sample;
         }
 
         // GET: api/Samples/5

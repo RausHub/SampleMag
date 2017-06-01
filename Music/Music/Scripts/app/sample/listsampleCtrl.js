@@ -1,32 +1,35 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('listsampleCtrl', listsampleCtrl);
+    //app.service("sampleService", function ($http) {
+        
+    //    this.getall = function() {
+    //        $http({
+    //            method: 'GET',
+    //            url: 'api/samples',
+    //            data: {}
+    //        }).then(function (response) {                
+    //            console.log(response);
+    //            return response.data;
+    //        });     
+    //    }        
+    //});    
 
-    app.factory("sampleService", function () {
-        return $resource('api/sample/:sample',
-            { sample: "@sample" });
-    });    
+    app.controller('listsampleCtrl', ['$scope', '$http', 'sampleService', function ($scope, $http, sampleService) {
+        $scope.posts = {};
 
-    listsampleCtrl.$inject = ['$scope','$http'];
+        $scope.$on('sampleService:getAllLoaded', function () {
+            $scope.posts = sampleService.samples;
+        })
 
-    function listsampleCtrl($scope,$http) {
+        console.log($scope.posts);
+        //var onInit = function () {
+        //    var x = 
+        //    console.log("Dit is object", x);           
+        //}
 
-        $scope.posts = [];
+        //onInit(); }]);
+    }]);
 
-        var onInit = function () {
-            $http({
-                method: 'GET',
-                url: 'api/Samples'
-            }).then(function (response) {
-                console.log(response);
-                $scope.posts = response.data;
-            });
-        }
-
-        onInit();
-
-        $scope.detail = sampleService.get({ sample: parseInt($scope.sampleId) });
-    }
 
 })(angular.module('app'));

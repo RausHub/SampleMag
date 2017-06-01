@@ -27,6 +27,7 @@ namespace Music
                 "~/Scripts/app/account/loginCtrl.js",
                 "~/Scripts/app/home/rootCtrl.js",
                 "~/Scripts/app/home/indexCtrl.js",
+                "~/Scripts/app/sample/sampleService.js",
                 "~/Scripts/app/sample/createCtrl.js",
                 "~/Scripts/app/sample/listsampleCtrl.js"
                 ));
