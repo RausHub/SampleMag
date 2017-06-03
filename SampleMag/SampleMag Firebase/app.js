@@ -1,4 +1,4 @@
-var app = angular.module('SampleMag', ['ngRoute', 'firebase', 'videosharing-embed']);
+var app = angular.module('SampleMag', ['ngRoute', 'firebase', 'videosharing-embed','angucomplete-alt']);
 
 //Firebase URL
 app.constant('fbURL', 'https://samplemag-2696a.firebaseio.com');

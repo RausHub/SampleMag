@@ -9,9 +9,12 @@
     
 
 
+
  <!-- view -->
     
     <div class="sample"  style="width: 70%; margin: 0 auto">
+        
+        <h6>Your search returned these results:</h6>
 
         <ul ng-repeat="post in posts | orderBy: 'votes'">
             <li>
@@ -20,7 +23,7 @@
                     <h6><a>UPVOTES: </a>{{post.votes}}<a> LOCATION: </a>{{post.location}} <a>BY: </a>{{sample.username}}</h6>
                 </div>
                 
-                <embed-video href="{{post.content}}" width="854" height="480" [force-protocol="ANY"] [options]></embed-video>
+                <embed-video href="{{post.content}}" width="640" height="360" [force-protocol="ANY"] [options]></embed-video>
                 
                 <div class="user">
                     <button ng-click="addVote(post)"><img ng-src="images/upvote.png"></button>
@@ -32,3 +35,12 @@
         </ul>
 <br>
  
+<!-- 
+<div class="extra-pagination inner">
+<nav class="pagination" role="pagination">
+<a class="newer-posts" href="" title="Previous Page">« Newer Posts</a>
+<span class="page-number"> Page </span>
+<a class="older-posts" href="" title="Next Page">Older Posts »</a>
+</nav>
+</div>
+-->
