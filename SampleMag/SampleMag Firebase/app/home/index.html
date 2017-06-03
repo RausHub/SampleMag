@@ -1,0 +1,29 @@
+<!--
+<div ng-controller="indexCtrl">
+    <div class="jumbotron">
+        <h1 class="text-center">
+            <img src="../../../Content/Images/logo-main-544x184.png" />
+        </h1>
+        <p class="lead">SampleMag is geweldig en nog meer intro tekst indien gewenst</p>
+    </div>
+</div>-->
+
+
+<html ng-app="SampleMag">
+<title>SampleMag</title>
+<div ng-controller="indexCtrl">
+<header ng-include src="'app/layout/navBar.html'"></header>
+    
+    <!-- View -->
+    <div ng-view></div>
+    <br>
+    <br>
+    <hr>
+
+<footer ng-include src="'app/layout/footer.html'"></footer>   
+       
+</div>
+
+<!-- script links here-->
+ 
+</html>

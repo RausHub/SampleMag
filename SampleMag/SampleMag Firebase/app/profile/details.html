@@ -1,0 +1,66 @@
+<style>
+    button{
+        border:none;
+        background:none;
+        padding:0;
+    }
+
+    .profile{
+        width:70%;
+        margin: 0 auto;
+        text-align:center;
+        background-color: aqua;
+        color:white;
+        padding: 2em 2em 2em 2em;
+        margin: 5em auto;
+        border-radius: 25px;
+    }
+    h6{
+        color:white;
+    }
+    
+</style>
+
+<div class="profile">
+    
+<h3>{{user.username}}</h3>
+<h6>{{user.location}}</h6>
+
+ <button ng-if="userData.isUserLoggedIn" ng-click="openEditDialog()">Edit Details</button>
+
+</div>
+   
+
+
+   
+<div class="row">
+   <!-- view samples by userid-->
+    
+    <div class="sample"  style="width: 70%; margin: 0 auto">
+
+        <ul ng-repeat="post in posts | orderBy: 'votes'">
+            <li>
+                <div class="sampleHeader">
+                    <h2><a ng-href="{{post.url}}">{{post.artist}} - {{post.title}}</a></h2>
+                    <h6><a>UPVOTES: </a>{{post.votes}}<a> LOCATION: </a>{{post.location}} <a>BY: </a>{{user.username}}</h6>
+                </div>
+                
+                <embed-video href="{{post.content}}" width="640" height="360" [force-protocol="ANY"] [options]></embed-video>
+                
+                <div class="user">
+                    <button ng-click="addVote(post)"><img ng-src="images/upvote.png"></button>
+                    <button ng-click="deletePost(post)"><img src="images/downvote.png"></button>
+                    
+                </div>
+                <br>
+            </li>
+        </ul>
+</div>
+
+<div class="panel-footer">
+            <div class="text-center">
+                <custom-pager page="{{page}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></custom-pager>
+            </div>
+        </div>
+
+</div>

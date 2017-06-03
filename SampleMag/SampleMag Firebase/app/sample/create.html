@@ -1,0 +1,59 @@
+<br>
+ <br>
+ 
+  <!-- create -->
+   <div  style="width: 40%; margin: 0 auto" ng-controller="createCtrl">
+   <h1>Share a video</h1> 
+<br>
+    <form>
+        <!--        Title-->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">Title</label>
+            <input type="text" ng-model="post.title" class="form-control" validate-on="blur" required required-message="'Title is required'">
+        </div>
+        <!--        Artist -->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">Artist</label>
+            <input type="text" ng-model="post.artist" class="form-control" validate-on="blur" required required-message="'Artist is required'">
+        </div>
+        <!--        Category -->
+        <div class="form-group">
+            <label class="control-label">Category</label>
+            <select class="form-control" ng-model="post.category">
+            <option value="Alternative">Alternative</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Hiphop">Hiphop</option>
+            <option value="Pop">Pop</option>
+            </select>
+        </div>
+        
+        <!-- 
+        <select ng-model="sample.GenreId" class="form-control black" ng-options="option.ID as option.Name for option in genres" required></select>
+        <input type="hidden" name="GenreId" ng-value="sample.GenreId" />
+        
+        -->
+        
+        <!--        Content -->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">Video</label>
+            <input type="video" ng-model="post.content" class="form-control" validate-on="blur" required required-message="'Video Link is required'">
+        </div>
+        <!--        Description -->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">Location</label>
+            <input type="text" ng-model="post.location" class="form-control" validate-on="blur" required required-message="'Location is required'">
+        </div>
+        <!--        URL -->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">URL</label>
+            <input type="text" ng-model="post.url" class="form-control" validate-on="blur" required required-message="'Url is required'">
+        </div>
+        <br>
+        <!--        Save -->
+        <button ng-click="savePost(post)" class="btn btn-success btn-block" ng-href="#!/{{user.ID}}">Save</button>
+    </form>
+</div>
+
+   
+   
+  
