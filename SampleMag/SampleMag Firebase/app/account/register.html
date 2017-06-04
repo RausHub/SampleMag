@@ -1,0 +1,35 @@
+<br>
+<br>
+   
+    <div class="row"  style="width: 40%; margin: 0 auto">
+
+    <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Register</h1>
+        <p class="text-xs-center">
+        </p>
+
+        <form novalidate angular-validator name="userRegistration" angular-validator-submit="register()">
+            <fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Username" ng-model="user.username" name="inputUsername" validate-on="blur" required required-message="'Username is required'"/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control form-control-lg" type="email" placeholder="Email" ng-model="user.email" validate-on="blur" required required-message="'Email is required'"/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Password" ng-model="user.password" validate-on="blur" required required-message="'Password is required'"/>
+                </fieldset>
+
+                <button class="btn btn-success btn-block" type="submit">
+                    Register
+                </button>
+
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+ 

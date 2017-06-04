@@ -45,7 +45,7 @@
 
 
 
-<body>
+<body ng-controller="SmagController">
     
   <nav class="navbar navbar-light">
   <div class="container">
@@ -73,16 +73,19 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="#!/login">Log in</a>
+                <a ng-href="#!/login" ng-if="!userData.isUserLoggedIn">Log in<i class="fa fa-sign-in fa-fw pull-right"></i></a>
             </li>
+            <li>
+                <a ng-click="logout();" ng-if="userData.isUserLoggedIn">Logout<i class="fa fa-sign-out fa-fw- pull-right"></i></a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="userData.isUserLoggedIn">
+            <li class="userinfo"><a href="#/">{{username}}<i class="fa fa-user fa-fw"></i></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#!/register">Register</a>
             </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" ng-if="userData.isUserLoggedIn">
-            <li class="userinfo"><a href="#!/">{{username}}<i class="fa fa-user fa-fw"></i></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
@@ -93,7 +96,7 @@
 
 </nav>
 
- <input type="text" class="form-control"  placeholder="Search" style="width:75%;margin: auto">
+ <input type="text" class="form-control"  placeholder="Search" style="width:75%;margin: auto"/>
 
 
     
@@ -115,5 +118,8 @@
 
  <script src="app.js"></script>
  <script src="ng-videosharing-embed.min.js"></script>
+ <script src="angucomplete-alt.min.js"></script>
+ <script src="toastr.js"></script>
+ <script src="angular-base64.js"></script>
 
 </html>

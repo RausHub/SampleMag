@@ -5,16 +5,34 @@
         padding:0;
     }
 
-</style>
+    .profile{
+        width:70%;
+        margin: 0 auto;
+        text-align:center;
+        background-color: aqua;
+        color:white;
+        padding: 2em 2em 2em 2em;
+        margin: 5em auto;
+        border-radius: 25px;
+    }
+    h6{
+        color:white;
+    }
     
+</style>
 
+<div class="profile">
+    
+<h3>@JFK</h3>
+<h6>Antwerp</h6>
+    
+</div>
 
+   
 
- <!-- view -->
+   <!-- view samples by userid-->
     
     <div class="sample"  style="width: 70%; margin: 0 auto">
-        
-        <h6>Your search returned these results:</h6>
 
         <ul ng-repeat="post in posts | orderBy: 'votes'">
             <li>
@@ -27,20 +45,10 @@
                 
                 <div class="user">
                     <button ng-click="addVote(post)"><img ng-src="images/upvote.png"></button>
-                    
+                    <button ng-click="deletePost(post)"><img src="images/downvote.png"></button>
                     
                 </div>
                 <br>
             </li>
         </ul>
-<br>
- 
-<!-- 
-<div class="extra-pagination inner">
-<nav class="pagination" role="pagination">
-<a class="newer-posts" href="" title="Previous Page">« Newer Posts</a>
-<span class="page-number"> Page </span>
-<a class="older-posts" href="" title="Next Page">Older Posts »</a>
-</nav>
 </div>
--->

@@ -1,0 +1,24 @@
+<ul ng-repeat="post in posts | orderBy: 'post.votes'">
+    <li>
+        <div class="sampleHeader">
+            <h2>{{post.User}} - {{post.title}}</h2>
+            <h6><a>UPVOTES: </a>{{post.Count_Up}}<a> LOCATION: </a>{{post.Location}}</h6>
+        </div>
+
+        <embed-video href="{{post.content}}" width="560" height="315" [force-protocol="ANY" ] [options]></embed-video>
+
+        <div class="user">
+            <button ng-click="addVote(post)"><img ng-src="images/upvote.png" style="border:none"></button>
+            <button ng-click="deletePost(post)"><img src="images/downvote.png"></button>
+
+        </div>
+        <br>
+    </li>
+</ul>
+
+
+<div class="panel-footer">
+            <div class="text-center">
+                <custom-pager page="{{page}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></custom-pager>
+            </div>
+</div>
