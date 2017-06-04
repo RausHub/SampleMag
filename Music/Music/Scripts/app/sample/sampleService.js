@@ -12,6 +12,7 @@
                 data: {}
             }).then(function (response) {
                 service.samples = response.data;
+                console.log(service.samples);
                 $rootScope.$broadcast('sampleService:getAllLoaded');
             });
         }

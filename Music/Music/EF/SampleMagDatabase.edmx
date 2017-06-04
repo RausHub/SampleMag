@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SampleMagDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SampleMagDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MusicGenre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="Sample">
           <Key>
             <PropertyRef Name="Id" />
@@ -22,6 +30,7 @@
           <Property Name="Lifetime" Type="int" />
           <Property Name="Posted_on" Type="datetime" />
           <Property Name="UserID" Type="int" />
+          <Property Name="MusicGenreID" Type="int" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -60,6 +69,18 @@
           <Property Name="Remark" Type="varchar(max)" />
           <Property Name="Time_Of_Vote" Type="datetime" />
         </EntityType>
+        <Association Name="FK_Sample_MusicGenre">
+          <End Role="MusicGenre" Type="Self.MusicGenre" Multiplicity="0..1" />
+          <End Role="Sample" Type="Self.Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicGenre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sample">
+              <PropertyRef Name="MusicGenreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sample_User">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Sample" Type="Self.Sample" Multiplicity="*" />
@@ -97,9 +118,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SampleMagDatabaseModelStoreContainer">
+          <EntitySet Name="MusicGenre" EntityType="Self.MusicGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sample" EntityType="Self.Sample" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vote" EntityType="Self.Vote" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Sample_MusicGenre" Association="Self.FK_Sample_MusicGenre">
+            <End Role="MusicGenre" EntitySet="MusicGenre" />
+            <End Role="Sample" EntitySet="Sample" />
+          </AssociationSet>
           <AssociationSet Name="FK_Sample_User" Association="Self.FK_Sample_User">
             <End Role="User" EntitySet="User" />
             <End Role="Sample" EntitySet="Sample" />
@@ -113,8 +139,7 @@
             <End Role="Vote" EntitySet="Vote" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleMagDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -137,6 +162,8 @@
           <Property Name="UserID" Type="Int32" />
           <NavigationProperty Name="User" Relationship="Self.FK_Sample_User" FromRole="Sample" ToRole="User" />
           <NavigationProperty Name="Vote" Relationship="Self.FK_Vote_Sample" FromRole="Sample" ToRole="Vote" />
+          <Property Name="MusicGenreID" Type="Int32" />
+          <NavigationProperty Name="MusicGenre" Relationship="SampleMagDatabaseModel.FK_Sample_MusicGenre" FromRole="Sample" ToRole="MusicGenre" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -231,7 +258,33 @@
             <End Role="User" EntitySet="User" />
             <End Role="Vote" EntitySet="Vote" />
           </AssociationSet>
+          <EntitySet Name="MusicGenre" EntityType="SampleMagDatabaseModel.MusicGenre" />
+          <AssociationSet Name="FK_Sample_MusicGenre" Association="SampleMagDatabaseModel.FK_Sample_MusicGenre">
+            <End Role="MusicGenre" EntitySet="MusicGenre" />
+            <End Role="Sample" EntitySet="Sample" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MusicGenre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sample" Relationship="SampleMagDatabaseModel.FK_Sample_MusicGenre" FromRole="MusicGenre" ToRole="Sample" />
+        </EntityType>
+        <Association Name="FK_Sample_MusicGenre">
+          <End Type="SampleMagDatabaseModel.MusicGenre" Role="MusicGenre" Multiplicity="0..1" />
+          <End Type="SampleMagDatabaseModel.Sample" Role="Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicGenre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sample">
+              <PropertyRef Name="MusicGenreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -241,6 +294,7 @@
           <EntitySetMapping Name="Sample">
             <EntityTypeMapping TypeName="SampleMagDatabaseModel.Sample">
               <MappingFragment StoreEntitySet="Sample">
+                <ScalarProperty Name="MusicGenreID" ColumnName="MusicGenreID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -293,6 +347,15 @@
                 <ScalarProperty Name="Vote_Value" ColumnName="Vote_Value" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="Time_Of_Vote" ColumnName="Time_Of_Vote" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MusicGenre">
+            <EntityTypeMapping TypeName="SampleMagDatabaseModel.MusicGenre">
+              <MappingFragment StoreEntitySet="MusicGenre">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

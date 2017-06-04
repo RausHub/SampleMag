@@ -1,35 +1,34 @@
 ﻿(function (app) {
     'use strict';
 
-    //app.service("sampleService", function ($http) {
-        
-    //    this.getall = function() {
-    //        $http({
-    //            method: 'GET',
-    //            url: 'api/samples',
-    //            data: {}
-    //        }).then(function (response) {                
-    //            console.log(response);
-    //            return response.data;
-    //        });     
-    //    }        
-    //});    
-
-    app.controller('listsampleCtrl', ['$scope', '$http', 'sampleService', function ($scope, $http, sampleService) {
+    app.controller('listsampleCtrl', ['$scope', '$http', 'sampleService', '$routeParams', function ($scope, $http, sampleService, $routeParams) {
         $scope.posts = {};
 
-        $scope.$on('sampleService:getAllLoaded', function () {
-            $scope.posts = sampleService.samples;
-        })
+        //$scope.$on('sampleService:getAllLoaded', function () {
+        //    $scope.posts = sampleService.samples;
+        //})
 
-        console.log($scope.posts);
-        //var onInit = function () {
-        //    var x = 
-        //    console.log("Dit is object", x);           
-        //}
+        this.OnInit = function () {
+            if ($routeParams.genreID) {
+                $http({
+                    method: 'GET',
+                    url: 'api/samples/genre/' + $routeParams.genreID,
+                    data: {}
+                }).then(function (response) {
+                    $scope.posts = response.data;
+                });
+            } else {
+                $http({
+                    method: 'GET',
+                    url: 'api/samples',
+                    data: {}
+                }).then(function (response) {
+                    $scope.posts = response.data;
+                });
+            }
+        }
 
-        //onInit(); }]);
+        this.OnInit();
     }]);
-
 
 })(angular.module('app'));

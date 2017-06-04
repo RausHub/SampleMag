@@ -33,9 +33,11 @@ namespace Music.EF
         public Nullable<int> Lifetime { get; set; }
         public Nullable<System.DateTime> Posted_on { get; set; }
         public Nullable<int> UserID { get; set; }
+        public Nullable<int> MusicGenreID { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vote> Vote { get; set; }
+        public virtual MusicGenre MusicGenre { get; set; }
     }
 }

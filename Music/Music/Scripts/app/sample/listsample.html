@@ -2,17 +2,24 @@
     <ul>
         <li ng-repeat="post in posts">
             <div class="sampleHeader">
-                <h2>{{post.User}} - {{post.title}}</h2>
+                <h2>{{post.Title}}</h2>
                 <h6><a>UPVOTES: </a>{{post.Count_Up}}<a> LOCATION: </a>{{post.Location}}</h6>
             </div>
 
-            <embed-video href="{{post.content}}" width="560" height="315" [force-protocol="ANY" ] [options]></embed-video>
+            <embed-video href="{{post.Content_Path}}" width="560" height="315" [force-protocol="ANY" ] [options]></embed-video>
 
             <div class="user">
-                <button ng-click="addVote(post)"><img ng-src="images/upvote.png" style="border:none"></button>
-                <button ng-click="deletePost(post)"><img src="images/downvote.png"></button>
+                <button ng-click="addVote(post)">
+                <img ng-src="../../../Content/Images/upvote.png" style="border:none">
+                </button>
+                <button  ng-click="deletePost(post)">
+                <img src="../../../Content/Images/downvote.png"></button>
             </div>
             <br>
         </li>
     </ul>
+
+    <div ng-hide="posts.length" class="text-center">
+        <h2>no posts too show here, please move along</h2>
+    </div>
 </div>

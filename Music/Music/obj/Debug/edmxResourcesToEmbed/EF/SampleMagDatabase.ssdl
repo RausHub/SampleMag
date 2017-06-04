@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SampleMagDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MusicGenre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="Sample">
     <Key>
       <PropertyRef Name="Id" />
@@ -17,6 +25,7 @@
     <Property Name="Lifetime" Type="int" />
     <Property Name="Posted_on" Type="datetime" />
     <Property Name="UserID" Type="int" />
+    <Property Name="MusicGenreID" Type="int" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -55,6 +64,18 @@
     <Property Name="Remark" Type="varchar(max)" />
     <Property Name="Time_Of_Vote" Type="datetime" />
   </EntityType>
+  <Association Name="FK_Sample_MusicGenre">
+    <End Role="MusicGenre" Type="Self.MusicGenre" Multiplicity="0..1" />
+    <End Role="Sample" Type="Self.Sample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicGenre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sample">
+        <PropertyRef Name="MusicGenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Sample_User">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
     <End Role="Sample" Type="Self.Sample" Multiplicity="*" />
@@ -92,9 +113,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SampleMagDatabaseModelStoreContainer">
+    <EntitySet Name="MusicGenre" EntityType="Self.MusicGenre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sample" EntityType="Self.Sample" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vote" EntityType="Self.Vote" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Sample_MusicGenre" Association="Self.FK_Sample_MusicGenre">
+      <End Role="MusicGenre" EntitySet="MusicGenre" />
+      <End Role="Sample" EntitySet="Sample" />
+    </AssociationSet>
     <AssociationSet Name="FK_Sample_User" Association="Self.FK_Sample_User">
       <End Role="User" EntitySet="User" />
       <End Role="Sample" EntitySet="Sample" />

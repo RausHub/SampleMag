@@ -23,6 +23,10 @@
                 templateUrl: "scripts/app/sample/listsample.html",
                 controller: "listsampleCtrl"
             })
+            .when("/samples/genre/:genreID", {
+                templateUrl: "scripts/app/sample/listsample.html",
+                controller: "listsampleCtrl"
+            })
             .otherwise({ redirectTo: "/" });
 
         $locationProvider.hashPrefix('');

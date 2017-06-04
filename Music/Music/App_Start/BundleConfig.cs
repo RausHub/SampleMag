@@ -18,7 +18,10 @@ namespace Music
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
                 "~/Scripts/angular-cookies.js",
-                "~/Scripts/angular-resource.js"
+                "~/Scripts/angular-resource.js",
+                "~/Scripts/ng-videosharing-embed.min.js",
+                "~/Scripts/angucomplete-alt.min.js",
+                "~/Scripts/angular-base64.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/spa").Include(
@@ -32,9 +35,9 @@ namespace Music
                 "~/Scripts/app/sample/listsampleCtrl.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/content/site.css",
-                "~/content/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(                
+                "~/content/bootstrap2.css",
+                "~/content/site.css"));
 
             BundleTable.EnableOptimizations = false;
         }

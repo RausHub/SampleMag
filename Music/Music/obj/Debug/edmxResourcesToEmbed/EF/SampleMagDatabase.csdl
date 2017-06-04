@@ -19,6 +19,8 @@
     <Property Name="UserID" Type="Int32" />
     <NavigationProperty Name="User" Relationship="Self.FK_Sample_User" FromRole="Sample" ToRole="User" />
     <NavigationProperty Name="Vote" Relationship="Self.FK_Vote_Sample" FromRole="Sample" ToRole="Vote" />
+    <Property Name="MusicGenreID" Type="Int32" />
+    <NavigationProperty Name="MusicGenre" Relationship="SampleMagDatabaseModel.FK_Sample_MusicGenre" FromRole="Sample" ToRole="MusicGenre" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -113,5 +115,31 @@
       <End Role="User" EntitySet="User" />
       <End Role="Vote" EntitySet="Vote" />
     </AssociationSet>
+    <EntitySet Name="MusicGenre" EntityType="SampleMagDatabaseModel.MusicGenre" />
+    <AssociationSet Name="FK_Sample_MusicGenre" Association="SampleMagDatabaseModel.FK_Sample_MusicGenre">
+      <End Role="MusicGenre" EntitySet="MusicGenre" />
+      <End Role="Sample" EntitySet="Sample" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="MusicGenre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sample" Relationship="SampleMagDatabaseModel.FK_Sample_MusicGenre" FromRole="MusicGenre" ToRole="Sample" />
+  </EntityType>
+  <Association Name="FK_Sample_MusicGenre">
+    <End Type="SampleMagDatabaseModel.MusicGenre" Role="MusicGenre" Multiplicity="0..1" />
+    <End Type="SampleMagDatabaseModel.Sample" Role="Sample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicGenre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sample">
+        <PropertyRef Name="MusicGenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

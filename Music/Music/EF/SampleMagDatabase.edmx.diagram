@@ -7,10 +7,12 @@
       <Diagram DiagramId="d529b569e19b488d86792f2b260a16fc" Name="Diagram1">
         <EntityTypeShape EntityType="SampleMagDatabaseModel.Sample" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SampleMagDatabaseModel.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SampleMagDatabaseModel.Vote" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleMagDatabaseModel.Vote" Width="1.5" PointX="7.375" PointY="3.375" IsExpanded="true" />
         <AssociationConnector Association="SampleMagDatabaseModel.FK_Sample_User" ManuallyRouted="false" />
         <AssociationConnector Association="SampleMagDatabaseModel.FK_Vote_Sample" ManuallyRouted="false" />
         <AssociationConnector Association="SampleMagDatabaseModel.FK_Vote_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SampleMagDatabaseModel.MusicGenre" Width="1.5" PointX="5.25" PointY="0.5" />
+        <AssociationConnector Association="SampleMagDatabaseModel.FK_Sample_MusicGenre" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

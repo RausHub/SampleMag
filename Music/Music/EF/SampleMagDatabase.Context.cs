@@ -28,5 +28,6 @@ namespace Music.EF
         public virtual DbSet<Sample> Sample { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Vote> Vote { get; set; }
+        public virtual DbSet<MusicGenre> MusicGenre { get; set; }
     }
 }

@@ -20,10 +20,19 @@ namespace Music.Controllers
         public IQueryable<Sample> GetSample()
         {
             db.Configuration.LazyLoadingEnabled = false;
-
             return db.Sample;
         }
 
+        //GET: api/samples/genre/:genreid
+        [HttpGet]
+        [Route("api/samples/genre/{genreID}")]
+        public IQueryable<Sample> Genre(int genreId)
+        {
+            db.Configuration.LazyLoadingEnabled = false;
+            var y = db.Sample.Where(x=>x.MusicGenreID == genreId);
+            var z = y.ToList();
+            return y;
+        }
         // GET: api/Samples/5
         [ResponseType(typeof(Sample))]
         public async Task<IHttpActionResult> GetSample(int id)

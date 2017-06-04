@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Sample">
       <EntityTypeMapping TypeName="SampleMagDatabaseModel.Sample">
         <MappingFragment StoreEntitySet="Sample">
+          <ScalarProperty Name="MusicGenreID" ColumnName="MusicGenreID" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -56,6 +57,15 @@
           <ScalarProperty Name="Vote_Value" ColumnName="Vote_Value" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
           <ScalarProperty Name="Time_Of_Vote" ColumnName="Time_Of_Vote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusicGenre">
+      <EntityTypeMapping TypeName="SampleMagDatabaseModel.MusicGenre">
+        <MappingFragment StoreEntitySet="MusicGenre">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
