@@ -1,5 +1,4 @@
-﻿<div class="row">
-    <h1>login {{data}}</h1>
+
     <!--<form class="form-signin" role="form" novalidate angular-validator name="userLoginForm" angular-validator-submit="login()">
         <h3 class="form-signin-heading">Sign in</h3>
         <div class="form-group">
@@ -17,4 +16,42 @@
             <a ng-href="#/register" class="control-label">Register</a>
         </div>
     </form>-->
+
+
+
+<br>
+<br>
+ 
+   <div class="row"  style="width: 40%; margin: 0 auto">
+
+    <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Log In</h1>
+        <p class="text-xs-center">
+        </p>
+
+        <form novalidate angular-validator name="userLoginForm" angular-validator-submit="login()">
+            <fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control form-control-lg" type="text" id="inputUsername" name="inputUsername" placeholder="username" ng-model="user.username" validate-on="blur" required required-message="'Username is required'"/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Password" ng-model="user.password" id="inputPassword" name="inputPassword"/>
+                </fieldset>
+
+                <button class="btn btn-success btn-block" type="submit">
+                    Log In
+                </button>
+
+            
+            
+            </fieldset>
+            
+        </form>
+    </div>
+<div class="pull-right">
+            <a ng-href="#/register" class="control-label">Register</a>
+        </div>
+
 </div>

@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>SampleMag</title>
     <!--in app data bundleconfig worden deze bundels bepaald-->
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <!--
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,13 +30,13 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
+        
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - SampleMag Application</p>
         </footer>
-    </div>
-
+    </div>-->
+    @RenderBody()
     @Scripts.Render("~/bundles/vendors")
     @Scripts.Render("~/bundles/spa")
     @RenderSection("scripts", required: false)

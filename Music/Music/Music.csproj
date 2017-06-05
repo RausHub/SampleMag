@@ -232,6 +232,7 @@
       <DependentUpon>SampleMagDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\angular-toastr.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap2.css" />
@@ -240,9 +241,11 @@
     <Content Include="Content\Images\EdSheeranShape.jpg" />
     <Content Include="Content\Images\info.png" />
     <Content Include="Content\Images\logo-250x50.png" />
+    <Content Include="Content\Images\logo-b-250x50.png" />
     <Content Include="Content\Images\logo-main-544x184.png" />
     <Content Include="Content\Images\logo-nav-176x35.png" />
     <Content Include="Content\Images\logo-nav-white-176x35.png" />
+    <Content Include="Content\Images\logo-red-250x50.png" />
     <Content Include="Content\Images\logo176x35.png" />
     <Content Include="Content\Images\nav-logo-176x50.png" />
     <Content Include="Content\Images\Samplemag-logo-544x184.png" />
@@ -262,49 +265,65 @@
       <DependentUpon>SampleMagDatabase.edmx</DependentUpon>
       <LastGenOutput>SampleMagDatabase.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\angucomplete-alt.min.js" />
-    <Content Include="Scripts\angular-animate.js" />
-    <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-aria.js" />
-    <Content Include="Scripts\angular-aria.min.js" />
-    <Content Include="Scripts\angular-base64.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
-    <Content Include="Scripts\angular-csp.css" />
-    <Content Include="Scripts\angular-loader.js" />
-    <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-message-format.js" />
-    <Content Include="Scripts\angular-message-format.min.js" />
-    <Content Include="Scripts\angular-messages.js" />
-    <Content Include="Scripts\angular-messages.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-parse-ext.js" />
-    <Content Include="Scripts\angular-parse-ext.min.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular-route.js" />
-    <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular-sanitize.min.js" />
-    <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular-touch.js" />
-    <Content Include="Scripts\angular-touch.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\vendors\angucomplete-alt.min.js" />
+    <Content Include="Scripts\vendors\angular-animate.js" />
+    <Content Include="Scripts\vendors\angular-animate.min.js" />
+    <Content Include="Scripts\vendors\angular-aria.js" />
+    <Content Include="Scripts\vendors\angular-aria.min.js" />
+    <Content Include="Scripts\vendors\angular-base64.js" />
+    <Content Include="Scripts\vendors\angular-cookies.js" />
+    <Content Include="Scripts\vendors\angular-cookies.min.js" />
+    <Content Include="Scripts\vendors\angular-csp.css" />
+    <Content Include="Scripts\vendors\angular-loader.js" />
+    <Content Include="Scripts\vendors\angular-loader.min.js" />
+    <Content Include="Scripts\vendors\angular-message-format.js" />
+    <Content Include="Scripts\vendors\angular-message-format.min.js" />
+    <Content Include="Scripts\vendors\angular-messages.js" />
+    <Content Include="Scripts\vendors\angular-messages.min.js" />
+    <Content Include="Scripts\vendors\angular-mocks.js" />
+    <Content Include="Scripts\vendors\angular-parse-ext.js" />
+    <Content Include="Scripts\vendors\angular-parse-ext.min.js" />
+    <Content Include="Scripts\vendors\angular-resource.js" />
+    <Content Include="Scripts\vendors\angular-resource.min.js" />
+    <Content Include="Scripts\vendors\angular-route.js" />
+    <Content Include="Scripts\vendors\angular-route.min.js" />
+    <Content Include="Scripts\vendors\angular-sanitize.js" />
+    <Content Include="Scripts\vendors\angular-sanitize.min.js" />
+    <Content Include="Scripts\vendors\angular-scenario.js" />
+    <Content Include="Scripts\vendors\angular-toastr.js" />
+    <Content Include="Scripts\vendors\angular-touch.js" />
+    <Content Include="Scripts\vendors\angular-touch.min.js" />
+    <Content Include="Scripts\vendors\angular.js" />
+    <Content Include="Scripts\vendors\angular.min.js" />
     <Content Include="Scripts\app\account\login.html" />
     <Content Include="Scripts\app\account\loginCtrl.js" />
+    <Content Include="Scripts\app\account\register.html" />
+    <Content Include="Scripts\app\account\registerCtrl.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\home\index.html" />
     <Content Include="Scripts\app\home\indexCtrl.js" />
     <Content Include="Scripts\app\home\rootCtrl.js" />
+    <Content Include="Scripts\app\layout\customPager.directive.js" />
+    <Content Include="Scripts\app\layout\footer.html" />
+    <Content Include="Scripts\app\layout\navbar.directive.js" />
+    <Content Include="Scripts\app\layout\navBar.html" />
+    <Content Include="Scripts\app\layout\pager.html" />
     <Content Include="Scripts\app\modules\common.core.js" />
+    <Content Include="Scripts\app\modules\common.ui.js" />
+    <Content Include="Scripts\app\profile\details.html" />
+    <Content Include="Scripts\app\profile\editProfile.html" />
+    <Content Include="Scripts\app\profile\profileCtrl.js" />
+    <Content Include="Scripts\app\profile\profileEditCtrl.js" />
     <Content Include="Scripts\app\sample\create.html" />
     <Content Include="Scripts\app\sample\createCtrl.js" />
     <Content Include="Scripts\app\sample\listsample.html" />
     <Content Include="Scripts\app\sample\listsampleCtrl.js" />
     <Content Include="Scripts\app\sample\sampleService.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\app\services\apiService.js" />
+    <Content Include="Scripts\app\services\membershipService.js" />
+    <Content Include="Scripts\app\services\notificationService.js" />
+    <Content Include="Scripts\vendors\bootstrap.js" />
+    <Content Include="Scripts\vendors\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -327,19 +346,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\errors.json" />
-    <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\angular-touch.min.js.map" />
-    <Content Include="Scripts\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\angular-route.min.js.map" />
-    <Content Include="Scripts\angular-resource.min.js.map" />
-    <Content Include="Scripts\angular-parse-ext.min.js.map" />
-    <Content Include="Scripts\angular-messages.min.js.map" />
-    <Content Include="Scripts\angular-message-format.min.js.map" />
-    <Content Include="Scripts\angular-loader.min.js.map" />
-    <Content Include="Scripts\angular-cookies.min.js.map" />
-    <Content Include="Scripts\angular-aria.min.js.map" />
-    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\vendors\errors.json" />
+    <Content Include="Scripts\vendors\angular.min.js.map" />
+    <Content Include="Scripts\vendors\angular-touch.min.js.map" />
+    <Content Include="Scripts\vendors\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\vendors\angular-route.min.js.map" />
+    <Content Include="Scripts\vendors\angular-resource.min.js.map" />
+    <Content Include="Scripts\vendors\angular-parse-ext.min.js.map" />
+    <Content Include="Scripts\vendors\angular-messages.min.js.map" />
+    <Content Include="Scripts\vendors\angular-message-format.min.js.map" />
+    <Content Include="Scripts\vendors\angular-loader.min.js.map" />
+    <Content Include="Scripts\vendors\angular-cookies.min.js.map" />
+    <Content Include="Scripts\vendors\angular-aria.min.js.map" />
+    <Content Include="Scripts\vendors\angular-animate.min.js.map" />
     <EntityDeploy Include="EF\SampleMagDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleMagDatabase.Designer.cs</LastGenOutput>
@@ -347,7 +366,7 @@
     <Content Include="EF\SampleMagDatabase.edmx.diagram">
       <DependentUpon>SampleMagDatabase.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\vendors\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -1077,12 +1096,15 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\ng-videosharing-embed.min.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\vendors\jquery-1.10.2.js" />
+    <Content Include="Scripts\vendors\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\vendors\jquery-3.2.1.js" />
+    <Content Include="Scripts\vendors\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendors\ng-videosharing-embed.min.js" />
+    <Content Include="Scripts\vendors\respond.js" />
+    <Content Include="Scripts\vendors\respond.min.js" />
+    <Content Include="Scripts\vendors\toastr.js" />
+    <Content Include="Scripts\vendors\ui-bootstrap-2.5.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1113,7 +1135,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\vendors\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

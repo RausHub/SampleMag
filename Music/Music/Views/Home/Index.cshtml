@@ -1,3 +1,9 @@
-﻿    <div ng-app="app">  
-        <div ng-view></div>
+﻿<div ng-app="app">
+    <div ng-controller="rootCtrl">
+        <navbar></navbar>
+        <div class="row-offcanvas row-offcanvas-left">
+            <div ng-view></div>
+        </div>
+        <footer ng-include src="'Scripts/app/layout/footer.html'"></footer>
     </div>
+</div>
