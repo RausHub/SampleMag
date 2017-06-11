@@ -1,0 +1,23 @@
+﻿<div ng-controller="indexCtrl">
+    <div class="text-center">
+        <h1>
+            <img src="../../../Content/Images/logo-main-544x184.png" />
+        </h1>
+        <h2>
+            Choose wisely
+        </h2>
+        <!-- get list of generes here to go to samples of this genre-->
+        <ul class="list-inline">
+            <li>
+                <a href="#/samples">
+                    <h6>All</h6>
+                </a>
+            </li>
+            <li ng-repeat="item in genres">
+                <a ng-href="#/samples/genre/{{item.Id}}">
+                    <h6>{{item.Name}}</h6>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

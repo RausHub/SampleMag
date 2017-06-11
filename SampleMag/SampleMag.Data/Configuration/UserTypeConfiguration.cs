@@ -12,7 +12,6 @@ namespace SampleMag.Data.Configuration
         public UserTypeConfiguration()
         {
             Property(u => u.Name).IsRequired().HasMaxLength(100);
-            HasMany(u => u.Users).WithRequired().HasForeignKey(r => r.User_Type_ID);
         }
     }
 }

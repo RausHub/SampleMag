@@ -29,6 +29,11 @@ D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.dll.config
 D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.dll
 D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.pdb
 D:\SampleMag\SampleMag\SampleMag\bin\Antlr3.Runtime.dll
+D:\SampleMag\SampleMag\SampleMag\bin\Autofac.dll
+D:\SampleMag\SampleMag\SampleMag\bin\Autofac.Integration.WebApi.dll
+D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.dll
+D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.dll
+D:\SampleMag\SampleMag\SampleMag\bin\FluentValidation.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.Agent.Intercept.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.DependencyCollector.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -39,6 +44,9 @@ D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.ApplicationInsights.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.Web.Infrastructure.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Newtonsoft.Json.dll
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Data.dll
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Entity.dll
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Services.dll
 D:\SampleMag\SampleMag\SampleMag\bin\System.Net.Http.Formatting.dll
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.Helpers.dll
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.Http.dll
@@ -50,6 +58,15 @@ D:\SampleMag\SampleMag\SampleMag\bin\System.Web.WebPages.Deployment.dll
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.WebPages.dll
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.WebPages.Razor.dll
 D:\SampleMag\SampleMag\SampleMag\bin\WebGrease.dll
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Data.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Data.dll.config
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Entity.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Services.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\Autofac.xml
+D:\SampleMag\SampleMag\SampleMag\bin\Autofac.Integration.WebApi.xml
+D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.xml
+D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.xml
+D:\SampleMag\SampleMag\SampleMag\bin\FluentValidation.xml
 D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.Helpers.xml
 D:\SampleMag\SampleMag\SampleMag\bin\System.Web.Mvc.xml
@@ -71,9 +88,3 @@ D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.Web.xml
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.csprojResolveAssemblyReference.cache
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.dll
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.pdb
-D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.dll
-D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.dll
-D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Entity.dll
-D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Entity.pdb
-D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.xml
-D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.xml

@@ -7,16 +7,17 @@ namespace SampleMag.Entity
     public class Sample : IEntityBase
     {
         public Sample()
-        {
-            Genres = new List<Music_Genre>();
+        {            
         }
         public long ID { get; set; }
 
         public long UserID { get; set; }
 
         public User User { get; set; }
+
+        public long GenreID { get; set; }
         
-        public ICollection<Music_Genre> Genres { get; set; }
+        public Music_Genre Genre { get; set; }
 
         public DateTime Posted_On { get; set; }
 

@@ -1,4 +1,3 @@
-D:\SampleMag\SampleMag\SampleMag.Data\obj\Debug\SampleMag.Data.csprojResolveAssemblyReference.cache
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.Data.dll.config
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.Data.dll
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.Data.pdb
@@ -8,7 +7,6 @@ D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.Entity.dll
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.Entity.pdb
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\EntityFramework.xml
 D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\SampleMag\SampleMag\SampleMag.Data\obj\Debug\SampleMag.Data.csprojResolveAssemblyReference.cache
 D:\SampleMag\SampleMag\SampleMag.Data\obj\Debug\SampleMag.Data.dll
 D:\SampleMag\SampleMag\SampleMag.Data\obj\Debug\SampleMag.Data.pdb
-D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag.mdf
-D:\SampleMag\SampleMag\SampleMag.Data\bin\Debug\SampleMag_log.ldf

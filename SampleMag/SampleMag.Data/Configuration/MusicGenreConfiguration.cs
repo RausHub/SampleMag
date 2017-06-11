@@ -12,7 +12,7 @@ namespace SampleMag.Data.Configuration
         public MusicGenreConfiguration()
         {
             Property(m => m.Name).IsRequired().HasMaxLength(100);
-            Property(m => m.Description).IsRequired();
+            Property(m => m.Description).IsOptional();
         }
     }
 }

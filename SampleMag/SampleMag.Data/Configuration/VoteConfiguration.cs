@@ -12,7 +12,6 @@ namespace SampleMag.Data.Configuration
         public VoteConfiguration()
         {
             Property(v => v.SampleId).IsRequired();
-            Property(v => v.UserId).IsRequired();
             Property(v => v.Vote_Value).IsRequired();
             Property(v => v.Remark).IsOptional();
             Property(v => v.Time_Of_Vote).IsRequired();

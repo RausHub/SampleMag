@@ -45,11 +45,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.0.3\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -155,88 +164,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacWebapiConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SampleController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Converters\SampleConverter.cs" />
-    <Compile Include="Models\Converters\UserConverter.cs" />
-    <Compile Include="Models\Converters\VoteConverter.cs" />
+    <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\ApiControllerBaseExtended.cs" />
+    <Compile Include="Infrastructure\Core\DataRepositoryFactory.cs" />
+    <Compile Include="Infrastructure\Core\FileUploadResult.cs" />
+    <Compile Include="Infrastructure\Core\MimeMultipart.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
+    <Compile Include="Infrastructure\Core\UploadMultipartFormProvider.cs" />
+    <Compile Include="Infrastructure\Extensions\RequestMessageExtensions.cs" />
+    <Compile Include="Infrastructure\MessageHandlers\SampleMagAuthHandler.cs" />
+    <Compile Include="Infrastructure\Validators\AccountViewModelValidators.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\RegistrationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample.cs">
-      <DependentUpon>SampleMagEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SampleMagEF.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SampleMagEF.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SampleMagEF.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SampleMagEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SampleMagEF.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SampleMagEF.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Service\SampleService.cs" />
-    <Compile Include="Service\UserService.cs" />
-    <Compile Include="Service\VoteService.cs" />
-    <Compile Include="User.cs">
-      <DependentUpon>SampleMagEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vote.cs">
-      <DependentUpon>SampleMagEF.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SampleMagDatabase.mdf" />
-    <Content Include="App_Data\SampleMagDatabase_log.ldf">
-      <DependentUpon>SampleMagDatabase.mdf</DependentUpon>
+    <Content Include="App_Data\SampleDatabase.mdf" />
+    <Content Include="App_Data\SampleDatabase_log.ldf">
+      <DependentUpon>SampleDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap2.css" />
+    <Content Include="Content\images\downvote.png" />
+    <Content Include="Content\images\EdSheeranProfilePic %281%29.jpg" />
+    <Content Include="Content\images\EdSheeranShape.jpg" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\logo-250x50.png" />
+    <Content Include="Content\images\logo-b-250x50.png" />
+    <Content Include="Content\images\logo-main-544x184.png" />
+    <Content Include="Content\images\logo-nav-176x35.png" />
+    <Content Include="Content\images\logo-nav-white-176x35.png" />
+    <Content Include="Content\images\logo-red-250x50.png" />
+    <Content Include="Content\images\logo176x35.png" />
+    <Content Include="Content\images\nav-logo-176x50.png" />
+    <Content Include="Content\images\Samplemag-logo-544x184.png" />
+    <Content Include="Content\images\Samplemag-logo-red-544x184.png" />
+    <Content Include="Content\images\samplemag-white-logo-176x45.png" />
+    <Content Include="Content\images\upvote.png" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Images\downvote.png" />
-    <Content Include="Images\EdSheeranProfilePic %281%29.jpg" />
-    <Content Include="Images\EdSheeranShape.jpg" />
-    <Content Include="Images\info.png" />
-    <Content Include="Images\logo-250x50.png" />
-    <Content Include="Images\logo-main-544x184.png" />
-    <Content Include="Images\logo-nav-176x35.png" />
-    <Content Include="Images\logo-nav-white-176x35.png" />
-    <Content Include="Images\logo176x35.png" />
-    <Content Include="Images\nav-logo-176x50.png" />
-    <Content Include="Images\Samplemag-logo-544x184.png" />
-    <Content Include="Images\Samplemag-logo-red-544x184.png" />
-    <Content Include="Images\samplemag-white-logo-176x45.png" />
-    <Content Include="Images\upvote.png" />
-    <Content Include="SampleMagEF.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SampleMagEF.edmx</DependentUpon>
-      <LastGenOutput>SampleMagEF.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SampleMagEF.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SampleMagEF.edmx</DependentUpon>
-      <LastGenOutput>SampleMagEF.cs</LastGenOutput>
-    </Content>
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Scripts\app\account\login.html" />
+    <Content Include="Scripts\app\account\loginCtrl.js" />
+    <Content Include="Scripts\app\account\register.html" />
+    <Content Include="Scripts\app\account\registerCtrl.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\home\index.html" />
+    <Content Include="Scripts\app\home\indexCtrl.js" />
+    <Content Include="Scripts\app\home\rootCtrl.js" />
+    <Content Include="Scripts\app\layout\customPager.directive.js" />
+    <Content Include="Scripts\app\layout\footer.html" />
+    <Content Include="Scripts\app\layout\navbar.directive.js" />
+    <Content Include="Scripts\app\layout\navBar.html" />
+    <Content Include="Scripts\app\layout\pager.html" />
+    <Content Include="Scripts\app\modules\common.core.js" />
+    <Content Include="Scripts\app\modules\common.ui.js" />
+    <Content Include="Scripts\app\profile\details.html" />
+    <Content Include="Scripts\app\profile\editProfile.html" />
+    <Content Include="Scripts\app\profile\profileCtrl.js" />
+    <Content Include="Scripts\app\profile\profileEditCtrl.js" />
+    <Content Include="Scripts\app\sample\create.html" />
+    <Content Include="Scripts\app\sample\createCtrl.js" />
+    <Content Include="Scripts\app\sample\listsample.html" />
+    <Content Include="Scripts\app\sample\listsampleCtrl.js" />
+    <Content Include="Scripts\app\sample\sampleService.js" />
+    <Content Include="Scripts\app\services\apiService.js" />
+    <Content Include="Scripts\app\services\membershipService.js" />
+    <Content Include="Scripts\app\services\notificationService.js" />
+    <Content Include="Scripts\libs\angucomplete-alt.min.js" />
     <Content Include="Scripts\libs\angular-animate.js" />
     <Content Include="Scripts\libs\angular-animate.min.js" />
     <Content Include="Scripts\libs\angular-aria.js" />
     <Content Include="Scripts\libs\angular-aria.min.js" />
+    <Content Include="Scripts\libs\angular-base64.js" />
     <Content Include="Scripts\libs\angular-cookies.js" />
     <Content Include="Scripts\libs\angular-cookies.min.js" />
     <Content Include="Scripts\libs\angular-csp.css" />
@@ -256,6 +268,7 @@
     <Content Include="Scripts\libs\angular-sanitize.js" />
     <Content Include="Scripts\libs\angular-sanitize.min.js" />
     <Content Include="Scripts\libs\angular-scenario.js" />
+    <Content Include="Scripts\libs\angular-toastr.js" />
     <Content Include="Scripts\libs\angular-touch.js" />
     <Content Include="Scripts\libs\angular-touch.min.js" />
     <Content Include="Scripts\libs\angular.js" />
@@ -278,13 +291,6 @@
     <Content Include="Scripts\libs\angular-cookies.min.js.map" />
     <Content Include="Scripts\libs\angular-aria.min.js.map" />
     <Content Include="Scripts\libs\angular-animate.min.js.map" />
-    <EntityDeploy Include="SampleMagEF.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SampleMagEF.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="SampleMagEF.edmx.diagram">
-      <DependentUpon>SampleMagEF.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\libs\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1018,17 +1024,20 @@
     <Content Include="Scripts\libs\jquery-1.10.2.js" />
     <Content Include="Scripts\libs\jquery-1.10.2.min.js" />
     <None Include="Scripts\libs\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\libs\jquery-3.2.1.js" />
     <Content Include="Scripts\libs\jquery.validate.js" />
     <Content Include="Scripts\libs\jquery.validate.min.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
+    <Content Include="Scripts\libs\ng-videosharing-embed.min.js" />
     <Content Include="Scripts\libs\respond.js" />
     <Content Include="Scripts\libs\respond.min.js" />
-    <Content Include="Scripts\Spa\app.js" />
-    <Content Include="Scripts\Spa\Sample\create.html" />
-    <Content Include="Scripts\Spa\Sample\listsamples.html" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\libs\toastr.js" />
+    <Content Include="Scripts\libs\ui-bootstrap-2.5.0.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1042,17 +1051,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\libs\version.json" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Scripts\Spa\User\" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1061,9 +1068,17 @@
     <Content Include="Scripts\libs\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SampleMag.Data\SampleMag.Data.csproj">
+      <Project>{0343f5da-4f94-42d7-ad50-05d65ca866b0}</Project>
+      <Name>SampleMag.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleMag.Entity\SampleMag.Entity.csproj">
       <Project>{95914b6d-86da-4e36-b470-eabb0e73df0f}</Project>
       <Name>SampleMag.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleMag.Services\SampleMag.Services.csproj">
+      <Project>{2c6548ac-5a4d-4853-89fc-4f23d2febac2}</Project>
+      <Name>SampleMag.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,37 @@
+﻿<div ng-controller="createCtrl">
+    <h1>Create a new sample:</h1>
+    <br>
+    <!-- create -->
+        <form>
+            <!--        Title-->
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">Title</label>
+                <input type="text" ng-model="post.Title" class="form-control">
+            </div>
+            <!--        Artist -->
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">Text</label>
+                <input type="text" ng-model="post.Text" class="form-control">
+            </div>
+            <!--        Content -->
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">Content</label>
+                <input type="video" ng-model="post.Content_Path" class="form-control">
+            </div>
+            <!--        Description -->
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">Location</label>
+                <input type="text" ng-model="post.Location" class="form-control">
+            </div>
+            <!--        URL -->
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">URL</label>
+                <input type="text" ng-model="post.Url" class="form-control">
+            </div>
+            <br>
+            <!--        Save -->
+            <button ng-click="savePost()" class="btn btn-success btn-block">Save</button>
+        </form>
+    <br>
+    <hr>
+</div>

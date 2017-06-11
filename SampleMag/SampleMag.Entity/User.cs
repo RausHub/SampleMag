@@ -9,7 +9,6 @@ namespace SampleMag.Entity
         public User()
         {
             User_Categories = new List<Music_Genre>();
-            Votes = new List<Vote>();
         }        
 
         public string Profile_Name { get; set; }
@@ -48,9 +47,7 @@ namespace SampleMag.Entity
 
         public long Vote_Count_Up { get; set; }
 
-        public long Vote_Count_Down { get; set; }
-
-        public ICollection<Vote> Votes { get; set; }
+        public long Vote_Count_Down { get; set; }        
        
 
         //    CREATE TABLE Users(

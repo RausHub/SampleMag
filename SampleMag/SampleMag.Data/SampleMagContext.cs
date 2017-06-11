@@ -7,10 +7,10 @@ namespace SampleMag.Data
 {
     public class SampleMagContext : DbContext
     {
-        public SampleMagContext() : base("SampleMagConnection")
+        public SampleMagContext() : base("SampleDatabase")
         {
-            //Database.SetInitializer<SampleMagContext>(null);
-            Database.SetInitializer(new SampleMagInitializer());
+            Database.SetInitializer<SampleMagContext>(null);
+            //Database.SetInitializer(new SampleMagInitializer());
         }
 
         #region Entity Sets
@@ -23,6 +23,7 @@ namespace SampleMag.Data
         public IDbSet<User> UserSet { get; set; }
         public IDbSet<UserRole> UserRoleSet { get; set; }
         public IDbSet<User_Type> UserTypeSet { get; set; }
+        public IDbSet<VoteUser> VoteUserSet { get; set; }
         public IDbSet<Vote> VoteSet { get; set; }
         public IDbSet<Error> ErrorSet { get; set; }
         #endregion
@@ -45,6 +46,7 @@ namespace SampleMag.Data
             modelBuilder.Configurations.Add(new ProfileStatusConfiguration());
             modelBuilder.Configurations.Add(new SampleConfiguration());
             modelBuilder.Configurations.Add(new UserTypeConfiguration());
+            modelBuilder.Configurations.Add(new VoteUserConfiguration());
             modelBuilder.Configurations.Add(new VoteConfiguration());
         }
     }

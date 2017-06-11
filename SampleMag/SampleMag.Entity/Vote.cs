@@ -7,11 +7,7 @@ namespace SampleMag.Entity
     public class Vote : IEntityBase
     {
         public long ID { get; set; }
-
-        public long UserId { get; set; }
-
-        public User User { get; set; }
-
+        
         public long SampleId { get; set; }
 
         public Sample Sample { get; set; }

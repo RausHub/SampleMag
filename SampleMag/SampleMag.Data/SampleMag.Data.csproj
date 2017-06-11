@@ -72,7 +72,9 @@
     <Compile Include="Configuration\SampleConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Configuration\UserTypeConfiguration.cs" />
+    <Compile Include="Configuration\UserVoteConfiguration.cs" />
     <Compile Include="Configuration\VoteConfiguration.cs" />
+    <Compile Include="Extensions\UserExtensions.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
@@ -88,17 +90,10 @@
     <Compile Include="SampleMagInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SampleMag.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SampleMag_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SampleMag.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -117,6 +112,12 @@
       <Project>{95914b6d-86da-4e36-b470-eabb0e73df0f}</Project>
       <Name>SampleMag.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleDatabase.mdf" />
+    <Content Include="SampleDatabase_log.ldf">
+      <DependentUpon>SampleDatabase.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

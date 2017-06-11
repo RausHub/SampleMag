@@ -8,13 +8,12 @@ namespace SampleMag.Entity
     {
         public User_Type()
         {
-            Users = new List<User>();
+            
         }
 
         public long ID { get; set; }
 
         public string  Name { get; set; }
-
-        public ICollection<User> Users { get; set; }
+        
     }
 }
