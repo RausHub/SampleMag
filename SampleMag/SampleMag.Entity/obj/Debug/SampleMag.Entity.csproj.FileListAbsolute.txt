@@ -2,3 +2,4 @@ D:\SampleMag\SampleMag\SampleMag.Entity\bin\Debug\SampleMag.Entity.dll
 D:\SampleMag\SampleMag\SampleMag.Entity\bin\Debug\SampleMag.Entity.pdb
 D:\SampleMag\SampleMag\SampleMag.Entity\obj\Debug\SampleMag.Entity.dll
 D:\SampleMag\SampleMag\SampleMag.Entity\obj\Debug\SampleMag.Entity.pdb
+D:\SampleMag\SampleMag\SampleMag.Entity\obj\Debug\SampleMag.Entity.csprojResolveAssemblyReference.cache

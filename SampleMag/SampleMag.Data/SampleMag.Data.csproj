@@ -71,6 +71,7 @@
     <Compile Include="Configuration\ProfileStatusConfiguration.cs" />
     <Compile Include="Configuration\SampleConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="Configuration\UserMusicGenreConfiguration.cs" />
     <Compile Include="Configuration\UserTypeConfiguration.cs" />
     <Compile Include="Configuration\UserVoteConfiguration.cs" />
     <Compile Include="Configuration\VoteConfiguration.cs" />

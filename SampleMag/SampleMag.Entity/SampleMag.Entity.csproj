@@ -52,6 +52,7 @@
     <Compile Include="User.cs" />
     <Compile Include="UserBase.cs" />
     <Compile Include="UserRole.cs" />
+    <Compile Include="User_MusicGenre.cs" />
     <Compile Include="User_Type.cs" />
     <Compile Include="Vote.cs" />
     <Compile Include="VoteUser.cs" />

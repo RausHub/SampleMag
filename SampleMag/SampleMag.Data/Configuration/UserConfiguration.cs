@@ -32,7 +32,6 @@ namespace SampleMag.Data.Configuration
             Property(u => u.Url).IsOptional();
             Property(u => u.User_Status_ID).IsOptional();
             Property(u => u.User_Type_ID).IsOptional();
-            HasMany(u => u.User_Categories);
             Property(u => u.Vote_Count_Down).IsOptional();
             Property(u => u.Vote_Count_Up).IsOptional();
         }

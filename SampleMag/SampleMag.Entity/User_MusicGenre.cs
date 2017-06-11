@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleMag.Entity
 {
-     public class VoteUser : IEntityBase
+    public class User_MusicGenre : IEntityBase
     {
         public long ID { get; set; }
 
@@ -14,8 +14,8 @@ namespace SampleMag.Entity
 
         public User User { get; set; }
 
-        public long VoteID { get; set; }
+        public long MusicGenreId { get; set; }
 
-        public Vote Vote { get; set; }
+        public Music_Genre MusicGenre { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace SampleMag.Entity
     {
         public User()
         {
-            User_Categories = new List<Music_Genre>();
+            
         }        
 
         public string Profile_Name { get; set; }
@@ -42,8 +42,6 @@ namespace SampleMag.Entity
         public long User_Type_ID { get; set; }
 
         public User_Type Reference_Type { get; set; }
-
-        public ICollection<Music_Genre> User_Categories { get; set; }
 
         public long Vote_Count_Up { get; set; }
 
