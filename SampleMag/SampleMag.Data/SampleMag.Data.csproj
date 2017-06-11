@@ -113,11 +113,5 @@
       <Name>SampleMag.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="SampleDatabase.mdf" />
-    <Content Include="SampleDatabase_log.ldf">
-      <DependentUpon>SampleDatabase.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
