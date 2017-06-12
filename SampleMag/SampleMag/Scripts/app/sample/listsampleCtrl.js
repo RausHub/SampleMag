@@ -5,11 +5,11 @@
         $scope.posts = {};
 
         this.OnInit = function () {
-            if ($routeParams.genreID) {
-                apiService.get('api/samples/genre/' + $routeParams.genreID, {}, samplesLoaded, samplesLoadedFailed);
-            } else {
-                apiService.get('api/samples', {}, samplesLoaded, samplesLoadedFailed);
-            }
+            //if ($routeParams.genreID) {
+            //    apiService.get('api/samples/genre/' + $routeParams.genreID, {}, samplesLoaded, samplesLoadedFailed);
+            //} else {
+            //    apiService.get('api/samples', {}, samplesLoaded, samplesLoadedFailed);
+            //}
         }
 
         function samplesLoaded(result) {

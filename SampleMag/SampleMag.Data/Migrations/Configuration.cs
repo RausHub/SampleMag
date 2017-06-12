@@ -15,55 +15,55 @@ namespace SampleMag.Data.Migrations
 
         protected override void Seed(SampleMagContext context)
         {
-            //create some languages
-            //werken en zijn independent
-            context.LanguageSet.Add(new Language() { Name = "English" });
-            context.LanguageSet.Add(new Language() { Name = "Nederlands" });
+            ////create some languages
+            ////werken en zijn independent
+            //context.LanguageSet.Add(new Language() { Name = "English" });
+            //context.LanguageSet.Add(new Language() { Name = "Nederlands" });
 
-            //create some Lifetime
-            //werken en zijn independent
-            context.LifetimeSet.Add(new Lifetime()
-            {
-                Name = "1 Year",
-                Duration = 365
-            });
-            context.LifetimeSet.Add(new Lifetime()
-            {
-                Name = "1 Month",
-                Duration = 30
-            });
+            ////create some Lifetime
+            ////werken en zijn independent
+            //context.LifetimeSet.Add(new Lifetime()
+            //{
+            //    Name = "1 Year",
+            //    Duration = 365
+            //});
+            //context.LifetimeSet.Add(new Lifetime()
+            //{
+            //    Name = "1 Month",
+            //    Duration = 30
+            //});
 
-            //create some Music_genres
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Alternative" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Electronic" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Hiphop" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Pop" });
+            ////create some Music_genres
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Alternative" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Electronic" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Hiphop" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Pop" });
 
-            //create some Profile_Status
-            context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Normal" });
-            context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Regular" });
+            ////create some Profile_Status
+            //context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Normal" });
+            //context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Regular" });
 
-            //create some Role
-            context.RoleSet.Add(new Role() { Name = "Admin" });
+            ////create some Role
+            //context.RoleSet.Add(new Role() { Name = "Admin" });
 
-            //create some Users
-            context.UserSet.Add( //pass = homecinema
-                new User()
-                {
-                    City = "Turnhout",
-                    Country = "Belgium",
-                    Email = "rausjelle@hotmail.com",
-                    DateCreated = DateTime.Now,
-                    First_Name = "Jelle",
-                    HashedPassword = "XwAQoiq84p1RUzhAyPfaMDKVgSwnn80NCtsE8dNv3XI=",
-                    Salt = "mNKLRbEFCH8y1xIyTXP4qA==",
-                    IsLocked = false,
-                    Language_Preference_ID = 1,
-                    Last_Name = "Raus",
-                    Profile_Name = "Jelle",
-                    Username = "Jelle",
-                    Vote_Count_Up = 2,
-                });
+            ////create some Users
+            //context.UserSet.Add( //pass = homecinema
+            //    new User()
+            //    {
+            //        City = "Turnhout",
+            //        Country = "Belgium",
+            //        Email = "rausjelle@hotmail.com",
+            //        DateCreated = DateTime.Now,
+            //        First_Name = "Jelle",
+            //        HashedPassword = "XwAQoiq84p1RUzhAyPfaMDKVgSwnn80NCtsE8dNv3XI=",
+            //        Salt = "mNKLRbEFCH8y1xIyTXP4qA==",
+            //        IsLocked = false,
+            //        Language_Preference_ID = 1,
+            //        Last_Name = "Raus",
+            //        Profile_Name = "Jelle",
+            //        Username = "Jelle",
+            //        Vote_Count_Up = 2,
+            //    });
 
             //create some Samples
             //context.SampleSet.Add(new Sample()
@@ -94,15 +94,15 @@ namespace SampleMag.Data.Migrations
             //});
 
             //create new user role
-            context.UserRoleSet.Add(new UserRole()
-            {
-                RoleId = 1,
-                UserId = 1
-            });
+            //context.UserRoleSet.Add(new UserRole()
+            //{
+            //    RoleId = 1,
+            //    UserId = 1
+            //});
 
-            //create some user_types
-            context.UserTypeSet.Add(new User_Type() { Name = "Musician" });
-            context.UserTypeSet.Add(new User_Type() { Name = "Director" });
+            ////create some user_types
+            //context.UserTypeSet.Add(new User_Type() { Name = "Musician" });
+            //context.UserTypeSet.Add(new User_Type() { Name = "Director" });
 
             //create some votes
             //context.VoteSet.Add(new Vote()

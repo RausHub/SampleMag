@@ -10,36 +10,36 @@ namespace SampleMag.Data
     {
         protected override void Seed(SampleMagContext context)
         {
-            //create some languages
-            //werken en zijn independent
-            context.LanguageSet.Add(new Language() { Name = "English" });
-            context.LanguageSet.Add(new Language() { Name = "Nederlands" });
+            ////create some languages
+            ////werken en zijn independent
+            //context.LanguageSet.Add(new Language() { Name = "English" });
+            //context.LanguageSet.Add(new Language() { Name = "Nederlands" });
 
-            //create some Lifetime
-            //werken en zijn independent
-            context.LifetimeSet.Add(new Lifetime()
-            {
-                Name = "1 Year",
-                Duration = 365
-            });
-            context.LifetimeSet.Add(new Lifetime()
-            {
-                Name = "1 Month",
-                Duration = 30
-            });
+            ////create some Lifetime
+            ////werken en zijn independent
+            //context.LifetimeSet.Add(new Lifetime()
+            //{
+            //    Name = "1 Year",
+            //    Duration = 365
+            //});
+            //context.LifetimeSet.Add(new Lifetime()
+            //{
+            //    Name = "1 Month",
+            //    Duration = 30
+            //});
 
-            //create some Music_genres
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Alternative" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Electronic" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Hiphop" });
-            context.MusicGenreSet.Add(new Music_Genre() { Name = "Pop" });
+            ////create some Music_genres
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Alternative" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Electronic" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Hiphop" });
+            //context.MusicGenreSet.Add(new Music_Genre() { Name = "Pop" });
 
-            //create some Profile_Status
-            context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Normal" });
-            context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Regular" });
+            ////create some Profile_Status
+            //context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Normal" });
+            //context.ProfileStatusSet.Add(new ProfileStatus() { Name = "Regular" });
 
-            //create some Role
-            context.RoleSet.AddOrUpdate(new Role() { Name = "Admin" });
+            ////create some Role
+            //context.RoleSet.AddOrUpdate(new Role() { Name = "Admin" });
 
             //create some Users
             //context.UserSet.Add( //pass = homecinema
@@ -96,8 +96,8 @@ namespace SampleMag.Data
             //});
 
             ////create some user_types
-            context.UserTypeSet.Add(new User_Type() { Name = "Musician" });
-            context.UserTypeSet.Add(new User_Type() { Name = "Director" });
+            //context.UserTypeSet.Add(new User_Type() { Name = "Musician" });
+            //context.UserTypeSet.Add(new User_Type() { Name = "Director" });
 
             ////create some votes
             //context.VoteSet.Add(new Vote()

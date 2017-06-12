@@ -1,3 +1,4 @@
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.dll
 D:\SampleMag\SampleMag\SampleMag\bin\ApplicationInsights.config
 D:\SampleMag\SampleMag\SampleMag\bin\roslyn\csc.exe
 D:\SampleMag\SampleMag\SampleMag\bin\roslyn\csc.exe.config
@@ -31,6 +32,7 @@ D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.pdb
 D:\SampleMag\SampleMag\SampleMag\bin\Antlr3.Runtime.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Autofac.dll
 D:\SampleMag\SampleMag\SampleMag\bin\Autofac.Integration.WebApi.dll
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.dll
 D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.dll
 D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.dll
 D:\SampleMag\SampleMag\SampleMag\bin\FluentValidation.dll
@@ -64,6 +66,9 @@ D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Entity.pdb
 D:\SampleMag\SampleMag\SampleMag\bin\SampleMag.Services.pdb
 D:\SampleMag\SampleMag\SampleMag\bin\Autofac.xml
 D:\SampleMag\SampleMag\SampleMag\bin\Autofac.Integration.WebApi.xml
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.xml
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.pdb
 D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.xml
 D:\SampleMag\SampleMag\SampleMag\bin\EntityFramework.SqlServer.xml
 D:\SampleMag\SampleMag\SampleMag\bin\FluentValidation.xml
@@ -88,8 +93,3 @@ D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.Web.xml
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.csprojResolveAssemblyReference.cache
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.dll
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.pdb
-D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.dll
-D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.dll
-D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.pdb
-D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.xml
-D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.pdb

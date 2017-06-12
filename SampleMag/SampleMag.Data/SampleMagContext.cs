@@ -9,8 +9,8 @@ namespace SampleMag.Data
     {
         public SampleMagContext() : base("SampleDatabase")
         {
-            //Database.SetInitializer<SampleMagContext>(null);
-            Database.SetInitializer(new SampleMagInitializer());
+            Database.SetInitializer<SampleMagContext>(null);
+            //Database.SetInitializer(new SampleMagInitializer());
         }
 
         #region Entity Sets
