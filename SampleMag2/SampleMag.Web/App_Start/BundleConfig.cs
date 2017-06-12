@@ -66,8 +66,8 @@ namespace SampleMag.Web.App_Start
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/content/css/site.css",
-                "~/content/css/bootstrap.css",
-                "~/content/css/bootstrap-theme.css",
+                "~/content/css/bootstrap2.css",
+                //"~/content/css/bootstrap-theme.css",
                  "~/content/css/font-awesome.css",
                 "~/content/css/morris.css",
                 "~/content/css/toastr.css",

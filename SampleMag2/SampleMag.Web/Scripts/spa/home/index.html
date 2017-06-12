@@ -1,7 +1,7 @@
 ﻿<hr />
 <div class="row">
     <div class="col-md-8">
-        <div class="panel panel-primary" id="panelLatestSamples">
+        <div class="panel panel-success" id="panelLatestSamples">
             <div class="panel-heading">
                 <h3 class="panel-title">Latest Samples Released</h3>
             </div>
@@ -23,14 +23,14 @@
                             <div class="media">
                                 <div class="media-body">
                                     <div><small>{{Sample.Text | limitTo: 70}}...</small></div>
-                                    <label class="label label-info">{{Sample.Genre}}</label><br />
+                                    <label class="label label-success">{{Sample.Genre}}</label><br />
                                 </div>
                                 <br />
                             </div>
                         </div>
                         <div class="panel-footer">
                             <span component-rating="{{Sample.Rating}}"></span>
-                            <a class="fancybox-media pull-right" ng-href="{{Sample.TrailerURI}}">Trailer<i class="fa fa-video-camera fa-fw"></i></a>
+                            <a class="fancybox-media pull-right text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="panel-footer">
                 <p class="text-center"><em>Wanna add a new Sample? Head over to the add Sample form.</em></p>
-                <p class="text-center"><a ng-href="#/Samples/add" class="btn btn-default">Add new Sample</a></p>
+                <p class="text-center"><a ng-href="#/Samples/add" class="btn btn-success">Add new Sample</a></p>
             </div>
         </div>
     </div>

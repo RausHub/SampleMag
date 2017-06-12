@@ -21,7 +21,7 @@
                 controller: "registerCtrl"
             })
             .when("/Samples", {
-                templateUrl: "scripts/spa/Samples/samples.html",
+                templateUrl: "scripts/spa/samples/samples.html",
                 controller: "samplesCtrl"
             })
             .when("/Samples/add", {

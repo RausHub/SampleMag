@@ -3,13 +3,13 @@
         <h3></h3>
         <ul class="nav nav-pills nav-stacked">
             <li class="nav-divider"></li>
-            <li class=""><a ng-href="#/">Home<i class="fa fa-home fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/" class="text-success">Home<i class="fa fa-home fa-fw pull-right"></i></a></li>
             <li class="nav-divider"></li>            
-            <li><a ng-href="#/Samples/">Samples<i class="fa fa-bullhorn fa-fw pull-right"></i></a></li>
-            <li><a ng-href="#/Samples/add">Add Sample<i class="fa fa-plus-circle fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/Samples/" class="text-success">Samples<i class="fa fa-bullhorn fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/Samples/add" class="text-success">Add Sample<i class="fa fa-plus-circle fa-fw pull-right"></i></a></li>
             <li class="nav-divider"></li>
-            <li><a ng-href="#/login" ng-if="!userData.isUserLoggedIn">Login<i class="fa fa-sign-in fa-fw pull-right"></i></a></li>
-            <li><button type="button" class="btn btn-danger btn-sm" ng-click="logout();" ng-if="userData.isUserLoggedIn">Logout<i class="fa fa-sign-out fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/login" ng-if="!userData.isUserLoggedIn" class="text-success">Login<i class="fa fa-sign-in fa-fw pull-right"></i></a></li>
+            <li><button type="button" class="btn btn-primary btn-sm" ng-click="logout();" ng-if="userData.isUserLoggedIn">Logout<i class="fa fa-sign-out fa-fw pull-right"></i></a></li>
         </ul>
     </div>
 </div>

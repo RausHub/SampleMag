@@ -1,11 +1,11 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('SamplesCtrl', SamplesCtrl);
+    app.controller('samplesCtrl', samplesCtrl);
 
-    SamplesCtrl.$inject = ['$scope', 'apiService','notificationService'];
+    samplesCtrl.$inject = ['$scope', 'apiService','notificationService'];
 
-    function SamplesCtrl($scope, apiService, notificationService) {
+    function samplesCtrl($scope, apiService, notificationService) {
         $scope.pageClass = 'page-Samples';
         $scope.loadingSamples = true;
         $scope.page = 0;
