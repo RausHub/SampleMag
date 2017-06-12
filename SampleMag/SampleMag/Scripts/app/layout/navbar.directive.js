@@ -1,9 +1,9 @@
 (function(app){
     'use strict';
     
-    app.directive('navbar', navBar);
+    app.directive('navbar' , navBar);
     
-    function navBar($http){
+    function navBar($http, apiService, notificationService){
         return {
             restrict: 'E',
             replace: true,
@@ -13,13 +13,24 @@
                 $scope.genres = [];
 
                 this.OnInit = function () {
-                    $http({
-                        method: 'GET',
-                        url: 'api/MusicGenres',
-                        data: {}
-                    }).then(function (response) {
-                        $scope.genres = response.data;
-                    });
+                    apiService.get('api/genres', null, loadGenresSucces, loadGenresFailed);
+                    //$http({
+                    //    method: 'GET',
+                    //    url: 'api/genres',
+                    //    data: {}
+                    //}).then(function (response) {
+                    //    console.log(response);
+                    //    $scope.genres = response.data;
+                    //});
+                }
+
+                function loadGenresSucces(result) {
+                    console.log(result);
+                    $scope.genres = response.data;
+                }
+
+                function loadGenresFailed(result) {
+                    notificationService.displayError(result.data);
                 }
 
                 this.OnInit();

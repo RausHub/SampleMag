@@ -12,7 +12,7 @@ using System.Net;
 
 namespace SampleMag.MessageHandlers
 {
-    public class HomeCinemaAuthHandler : DelegatingHandler
+    public class SampleMagAuthHandler : DelegatingHandler
     {
         IEnumerable<string> authHeaderValues = null;
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

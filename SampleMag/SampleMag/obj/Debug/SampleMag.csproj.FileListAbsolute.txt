@@ -88,3 +88,8 @@ D:\SampleMag\SampleMag\SampleMag\bin\Microsoft.AI.Web.xml
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.csprojResolveAssemblyReference.cache
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.dll
 D:\SampleMag\SampleMag\SampleMag\obj\Debug\SampleMag.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.dll
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.dll
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.pdb
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.xml
+D:\SampleMag\SampleMag\SampleMag\bin\AutoMapper.Net4.pdb
