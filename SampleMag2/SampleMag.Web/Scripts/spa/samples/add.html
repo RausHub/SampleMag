@@ -1,18 +1,8 @@
 ﻿<div id="editSampleWrapper">
     <hr>
     <div class="row">
-        <!-- left column -->
-        <div class="col-xs-3">
-            <div class="text-center">
-                <img ng-src="../../Content/images/Samples/unknown.jpg" class="avatar img-responsive" alt="avatar">
-                <h6>Add photo...</h6>
-
-                <input type="file" ng-file-select="prepareFiles($files)">
-            </div>
-        </div>
-
         <!-- edit form column -->
-        <div class="col-xs-9 personal-info">
+        <div class="col-md-8">
             <div class="alert alert-info alert-dismissable">
                 <a class="panel-close close" data-dismiss="alert">×</a>
                 <i class="fa fa-plus"></i>
@@ -60,28 +50,24 @@
                         </div>
 
                         <div class="col-xs-6">
-                            <label class="control-label">Youtube trailer</label>
+                            <label class="control-label">Youtube link</label>
                             <input class="form-control" type="text" ng-model="Sample.TrailerURI" name="trailerURI"
-                                   validate-on="blur" required required-message="'Sample trailer is required'" ng-pattern="/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/"
+                                   validate-on="blur" required required-message="'Sample youtube link is required'" ng-pattern="/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/"
                                    invalid-message="'You must enter a valid YouTube URL'">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label">Description</label>
+                    <label class="control-label">Text</label>
                     <textarea class="form-control" ng-model="Sample.Text" name="description" rows="3"
-                              validate-on="blur" required required-message="'Sample description is required'" />
+                              validate-on="blur" required required-message="'Sample text is required'" />
                 </div>
 
-                <div class="form-group col-xs-12">
-                    <label class="control-label">Rating</label>
-                    <span component-rating="{{Sample.Rating}}" ng-model="Sample.Rating" class="form-control"></span>
-                </div>
                 <br/>
                 <div class="form-group col-xs-4">
                     <label class="control-label"></label>
-                    <div class="">
+                    <div class="row">
                         <input type="submit" class="btn btn-success" value="Submit Sample" />
                         <span></span>
                         <a class="btn btn-default" ng-href="#/Samples/{{Sample.ID}}">Cancel</a>

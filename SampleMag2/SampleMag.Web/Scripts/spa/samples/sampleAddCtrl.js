@@ -1,21 +1,19 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('SampleAddCtrl', SampleAddCtrl);
+    app.controller('sampleAddCtrl', sampleAddCtrl);
 
-    SampleAddCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
+    sampleAddCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
 
-    function SampleAddCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
+    function sampleAddCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
 
         $scope.pageClass = 'page-Samples';
-        $scope.Sample = { GenreId: 1, Rating: 1, NumberOfStocks: 1 };
+        $scope.Sample = { GenreId: 1, Rating: 1 };
 
         $scope.genres = [];
         $scope.isReadOnly = false;
         $scope.AddSample = AddSample;
-        $scope.prepareFiles = prepareFiles;
         $scope.openDatePicker = openDatePicker;
-        $scope.changeNumberOfStocks = changeNumberOfStocks;
 
         $scope.dateOptions = {
             formatYear: 'yy',
@@ -48,13 +46,9 @@
             addSampleSucceded,
             addSampleFailed);
         }
-
-        function prepareFiles($files) {
-            SampleImage = $files;
-        }
-
+        
         function addSampleSucceded(response) {
-            notificationService.displaySuccess($scope.Sample.Title + ' has been submitted to Home Cinema');
+            notificationService.displaySuccess($scope.Sample.Title + ' has been submitted to SampleMag');
             $scope.Sample = response.data;
 
             if (SampleImage) {
@@ -79,27 +73,7 @@
         function redirectToEdit() {
             $location.url('Samples/edit/' + $scope.Sample.ID);
         }
-
-        function changeNumberOfStocks($vent)
-        {
-            var btn = $('#btnSetStocks'),
-            oldValue = $('#inputStocks').val().trim(),
-            newVal = 0;
-
-            if (btn.attr('data-dir') == 'up') {
-                newVal = parseInt(oldValue) + 1;
-            } else {
-                if (oldValue > 1) {
-                    newVal = parseInt(oldValue) - 1;
-                } else {
-                    newVal = 1;
-                }
-            }
-            $('#inputStocks').val(newVal);
-            $scope.Sample.NumberOfStocks = newVal;
-            console.log($scope.Sample);
-        }
-
+        
         loadGenres();
     }
 
