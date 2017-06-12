@@ -10,9 +10,9 @@ using SampleMag.App_Start;
 
 namespace SampleMag
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
-        protected void Application_Start()
+        void Application_Start()
         {
             var config = GlobalConfiguration.Configuration;
 
