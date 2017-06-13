@@ -1,11 +1,11 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('SampleEditCtrl', SampleEditCtrl);
+    app.controller('sampleEditCtrl', sampleEditCtrl);
 
-    SampleEditCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
+    sampleEditCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
 
-    function SampleEditCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
+    function sampleEditCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
         $scope.pageClass = 'page-Samples';
         $scope.Sample = {};
         $scope.genres = [];
@@ -76,7 +76,6 @@
         }
 
         function updateSampleSucceded(response) {
-            console.log(response);
             notificationService.displaySuccess($scope.Sample.Title + ' has been updated');
             $scope.Sample = response.data;
             SampleImage = null;

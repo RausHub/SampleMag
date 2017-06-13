@@ -1,6 +1,6 @@
 ﻿<hr />
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h4 class="panel-title pull-left" style="padding-top: 7.5px;">SampleMag Samples</h4>
@@ -14,7 +14,7 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="Sample in Samples | filter:filterSamples">
+                    <div class="col-sm-12 col-md-6" ng-repeat="Sample in Samples | filter:filterSamples">
                         <div class="media">
                             <a class="pull-left" ng-href="#/Samples/{{Sample.ID}}" title="View {{Sample.Title}} details"></a>
                             <div class="media-body">
@@ -24,7 +24,8 @@
                                 <a class="fancybox-media text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
                             </div>
                             <div class="media-bottom">
-                                <span component-rating="{{Sample.Rating}}"></span>
+                                <a ng-click="VoteSample(Sample)"><img src="../../../Content/images/samplemag/upvote.png" /></a>
+                                <span>Votes: {{Sample.Upvote}}</span>
                             </div>
                             <label class="label label-info">{{Sample.Genre}}</label>
                         </div>

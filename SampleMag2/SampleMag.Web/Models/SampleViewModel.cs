@@ -8,8 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace SampleMag.Web.Models
-{
-    [Bind(Exclude = "Image")]
+{    
     public class SampleViewModel : IValidatableObject
     {
         public int ID { get; set; }
@@ -19,7 +18,7 @@ namespace SampleMag.Web.Models
         public int GenreId { get; set; }
         public string Producer { get; set; }
         public DateTime PublishDate { get; set; }
-        public byte Rating { get; set; }
+        public int Upvote { get; set; }
         public string TrailerURI { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

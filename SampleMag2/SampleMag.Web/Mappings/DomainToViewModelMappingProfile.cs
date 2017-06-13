@@ -18,6 +18,7 @@ namespace SampleMag.Web.Mappings
         protected override void Configure()
         {
             Mapper.CreateMap<Sample, SampleViewModel>()
+                .ForMember(vm => vm.Upvote, map => map.MapFrom(m => m.UpVoteCount))
                 .ForMember(vm => vm.Genre, map => map.MapFrom(m => m.Genre.Name))
                 .ForMember(vm => vm.GenreId, map => map.MapFrom(m => m.Genre.ID));
 

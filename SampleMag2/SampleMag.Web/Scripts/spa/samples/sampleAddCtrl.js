@@ -42,6 +42,8 @@
         }
 
         function AddSampleModel() {
+            $scope.Sample.PublishDate = new Date().toLocaleString();
+            $scope.Sample.Upvote = 0;
             apiService.post('/api/Samples/add', $scope.Sample,
             addSampleSucceded,
             addSampleFailed);

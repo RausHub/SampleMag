@@ -1,33 +1,26 @@
 ﻿<div id="editSampleWrapper">
     <hr>
     <div class="row" ng-if="!loadingSample">
-        <!-- left column -->
-        <div class="col-xs-3">
-            <div class="text-center">
-                <img ng-src="../../Content/images/Samples/{{Sample.Image}}" class="avatar img-responsive" alt="avatar">
-                <h6>Change photo...</h6>
-
-                <input type="file" ng-file-select="prepareFiles($files)">
-            </div>
-        </div>
-
-        <!-- edit form column -->
-        <div class="col-xs-9 personal-info">
+        <div class="col-md-8">
             <div class="alert alert-info alert-dismissable">
                 <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-plus"></i>
                 Edit <strong>{{Sample.Title}}</strong> Sample. Make sure you fill all required fields.
             </div>
             <form class="form-horizontal" role="form" novalidate angular-validator name="editSampleForm" angular-validator-submit="UpdateSample()">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-xs-8">
+                        <div class="col-md-10">
                             <label class="control-label">Sample title</label>
                             <input class="form-control" name="title" type="text" ng-model="Sample.Title"
                                    validate-on="blur" required required-message="'Sample title is required'">
                         </div>
+                    </div>
+                </div>
 
-                        <div class="col-xs-4 selectContainer">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-10 selectContainer">
                             <label class="control-label">Genre</label>
                             <select ng-model="Sample.GenreId" class="form-control black" ng-options="option.ID as option.Name for option in genres" required></select>
                             <input type="hidden" name="GenreId" ng-value="Sample.GenreId" />
@@ -35,21 +28,10 @@
                     </div>
                 </div>
 
+                <!-- producer should be user but for now this will do-->
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-xs-4">
-                            <label class="control-label">Director</label>
-                            <input class="form-control" type="text" ng-model="Sample.Director" name="director"
-                                   validate-on="blur" required required-message="'Sample director is required'">
-                        </div>
-
-                        <div class="col-xs-4">
-                            <label class="control-label">Writer</label>
-                            <input class="form-control" type="text" ng-model="Sample.Writer" name="writer"
-                                   validate-on="blur" required required-message="'Sample writer is required'">
-                        </div>
-
-                        <div class="col-xs-4">
+                        <div class="col-md-10">
                             <label class="control-label">Producer</label>
                             <input class="form-control" type="text" ng-model="Sample.Producer" name="producer"
                                    validate-on="blur" required required-message="'Sample producer is required'">
@@ -57,39 +39,23 @@
                     </div>
                 </div>
 
+                <!-- url part -->
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-xs-6">
-                            <label class="control-label">Release Date</label>
-                            <p class="input-group">
-                                <input type="text" class="form-control" name="dateReleased" datepicker-popup="{{format}}" ng-model="Sample.ReleaseDate" is-open="datepicker.opened" datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
-                                       validate-on="blur" required required-message="'Date Released is required'" />
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="col-xs-6">
-                            <label class="control-label">Youtube trailer</label>
+                        <div class="col-md-10">
+                            <label class="control-label">Youtube link</label>
                             <input class="form-control" type="text" ng-model="Sample.TrailerURI" name="trailerURI"
-                                   validate-on="blur" required required-message="'Sample trailer is required'" ng-pattern="/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/"
+                                   validate-on="blur" required required-message="'Sample youtube link is required'" ng-pattern="/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/"
                                    invalid-message="'You must enter a valid YouTube URL'">
                         </div>
                     </div>
                 </div>
-
+                <!-- Text area -->
                 <div class="form-group">
-                    <label class="control-label">Description</label>
-                    <textarea class="form-control" ng-model="Sample.Description" name="description" rows="3"
-                              validate-on="blur" required required-message="'Sample description is required'" />
+                    <label class="control-label">Text</label>
+                    <textarea class="form-control" ng-model="Sample.Text" name="description" rows="3"
+                              validate-on="blur" required required-message="'Sample text is required'" />
                 </div>
-
-                <div class="form-group col-xs-12">
-                    <label class="control-label">Rating</label>
-                    <span component-rating="{{Sample.Rating}}" ng-model="Sample.Rating" class="form-control"></span>
-                </div>
-                <br />
                 <div class="form-group col-xs-4">
                     <label class="control-label"></label>
                     <div class="">

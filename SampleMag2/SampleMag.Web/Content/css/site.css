@@ -29,7 +29,7 @@ body {
 }
 
 .panel-body h4 {
-    color: #a55400;
+    color: #f44336;
 }
 
 .red {
@@ -121,7 +121,7 @@ ul.pagination > li
 
 /*Edit form*/
 #editSampleWrapper {
-    color: #22b24c;
+    color: #f44336;
     padding: 20px;
 }
 
@@ -179,7 +179,7 @@ ul.pagination > li
 
 /*Validation Errors*/
 .has-error .control-label {
-    color: #FFB658 !important;
+    color: #f44336 !important;
 }
 
 .SampleDescription {

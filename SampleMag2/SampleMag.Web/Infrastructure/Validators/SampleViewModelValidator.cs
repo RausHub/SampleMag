@@ -18,10 +18,10 @@ namespace SampleMag.Web.Infrastructure.Validators
                 .WithMessage("Select a producer");
 
             RuleFor(Sample => Sample.Text).NotEmpty()
-                .WithMessage("Select a description");
+                .WithMessage("Select a text");
 
-            RuleFor(Sample => Sample.Rating).InclusiveBetween((byte)0, (byte)5)
-                .WithMessage("Rating must be less than or equal to 5");
+            RuleFor(Sample => Sample.Upvote).GreaterThanOrEqualTo(0)
+                .WithMessage("Upvote must be higher than 0");
 
             RuleFor(Sample => Sample.TrailerURI).NotEmpty().Must(ValidTrailerURI)
                 .WithMessage("Only Youtube Trailers are supported");

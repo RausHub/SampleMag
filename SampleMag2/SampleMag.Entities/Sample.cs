@@ -15,7 +15,7 @@ namespace SampleMag.Entities
         public virtual Genre Genre { get; set; }
         public string Producer { get; set; }
         public DateTime PublishDate { get; set; }
-        public byte Rating { get; set; }
+        public int UpVoteCount { get; set; }
         public string TrailerURI { get; set; }
     }
 }

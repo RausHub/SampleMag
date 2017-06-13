@@ -10,12 +10,14 @@
         $scope.loadingSamples = true;
         $scope.loadingGenres = true;
         $scope.isReadOnly = true;
+        
 
         $scope.latestSamples = [];
         $scope.loadData = loadData;
+        $scope.VoteSample = voteSample;
 
         function loadData() {
-            apiService.get('/api/Samples/latest', null,
+            apiService.get('/api/Samples/popular', null,
                         SamplesLoadCompleted,
                         SamplesLoadFailed);
 
@@ -25,6 +27,7 @@
         }
 
         function SamplesLoadCompleted(result) {
+            console.log(result);
             $scope.latestSamples = result.data;
             $scope.loadingSamples = false;
         }
@@ -34,6 +37,20 @@
         }
 
         function SamplesLoadFailed(response) {
+            notificationService.displayError(response.data);
+        }
+
+        function voteSample(Sample) {
+            apiService.post('/api/Samples/upvote', Sample,
+                VotedSucces,
+                VotedFailed);
+        }
+
+        function VotedSucces() {
+            notificationService.displaySuccess("Thank you for your vote");
+        }
+
+        function VotedFailed(response) {
             notificationService.displayError(response.data);
         }
 

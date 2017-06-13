@@ -38,7 +38,24 @@ namespace SampleMag.Web.Controllers
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var Samples = _SamplesRepository.GetAll().OrderByDescending(m => m.PublishDate).Take(6).ToList();
+                var Samples = _SamplesRepository.GetAll().OrderByDescending(m => m.PublishDate).Take(10).ToList();
+
+                IEnumerable<SampleViewModel> SamplesVM = Mapper.Map<IEnumerable<Sample>, IEnumerable<SampleViewModel>>(Samples);
+
+                response = request.CreateResponse<IEnumerable<SampleViewModel>>(HttpStatusCode.OK, SamplesVM);
+
+                return response;
+            });
+        }
+
+        [AllowAnonymous]
+        [Route("popular")]
+        public HttpResponseMessage GetPopular(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var Samples = _SamplesRepository.GetAll().OrderByDescending(m => m.UpVoteCount).Take(10).ToList();
 
                 IEnumerable<SampleViewModel> SamplesVM = Mapper.Map<IEnumerable<Sample>, IEnumerable<SampleViewModel>>(Samples);
 
@@ -169,6 +186,37 @@ namespace SampleMag.Web.Controllers
                     else
                     {
                         SampleDb.UpdateSample(Sample);
+                        _SamplesRepository.Edit(SampleDb);
+
+                        _unitOfWork.Commit();
+                        response = request.CreateResponse<SampleViewModel>(HttpStatusCode.OK, Sample);
+                    }
+                }
+
+                return response;
+            });
+        }
+
+        [HttpPost]
+        [Route("upvote")]
+        public HttpResponseMessage Upvote(HttpRequestMessage request, SampleViewModel Sample)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var SampleDb = _SamplesRepository.GetSingle(Sample.ID);
+                    if (SampleDb == null)
+                        response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Sample.");
+                    else
+                    {
+                        SampleDb.UpVoteCount++;
                         _SamplesRepository.Edit(SampleDb);
 
                         _unitOfWork.Commit();

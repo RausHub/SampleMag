@@ -10,6 +10,7 @@
         $scope.loadingSamples = true;
         $scope.page = 0;
         $scope.pagesCount = 0;
+        $scope.VoteSample = voteSample;
         
         $scope.Samples = [];
 
@@ -55,6 +56,20 @@
         function clearSearch() {
             $scope.filterSamples = '';
             search();
+        }
+
+        function voteSample(Sample) {
+            apiService.post('/api/Samples/upvote', Sample,
+                VotedSucces,
+                VotedFailed);
+        }
+
+        function VotedSucces() {
+            notificationService.displaySuccess("Thank you for your vote");
+        }
+
+        function VotedFailed(response) {
+            notificationService.displayError(response.data);
         }
 
         $scope.search();
