@@ -13,10 +13,10 @@ namespace SampleMag.Web.Infrastructure.Validators
         {
             RuleFor(Sample => Sample.GenreId).GreaterThan(0)
                 .WithMessage("Select a Genre");
-
-            RuleFor(Sample => Sample.Producer).NotEmpty().Length(1, 50)
-                .WithMessage("Select a producer");
-
+            
+            RuleFor(Sample => Sample.UserId).GreaterThan(0).When(Sample => string.IsNullOrEmpty( Sample.User ))
+                .WithMessage("Must have an owner");
+            
             RuleFor(Sample => Sample.Text).NotEmpty()
                 .WithMessage("Select a text");
 

@@ -41,6 +41,11 @@ namespace SampleMag.Data
             modelBuilder.Configurations.Add(new RoleConfiguration());
             modelBuilder.Configurations.Add(new SampleConfiguration());
             modelBuilder.Configurations.Add(new GenreConfiguration());
+
+            modelBuilder.Entity<Sample>()
+                .HasRequired<User>(s => s.User)
+                .WithMany()
+                .WillCascadeOnDelete(false);
         }
     }
 }

@@ -24,9 +24,7 @@
         var SampleImage = null;
 
         function loadSample() {
-
             $scope.loadingSample = true;
-
             apiService.get('/api/Samples/details/' + $routeParams.id, null,
             SampleLoadCompleted,
             SampleLoadFailed);
@@ -58,14 +56,17 @@
         }
 
         function UpdateSample() {
-            if (SampleImage) {
-                fileUploadService.uploadImage(SampleImage, $scope.Sample.ID, UpdateSampleModel);
-            }
-            else
-                UpdateSampleModel();
+            //if (scope.Sample.User != $scope.username) {
+            //    notificationService.displayError("not your sample");
+            //}
+            //else {
+            //    UpdateSampleModel();
+            //}
+            UpdateSampleModel();
         }
 
         function UpdateSampleModel() {
+            $scope.Sample.User = $scope.username;
             apiService.post('/api/Samples/update', $scope.Sample,
             updateSampleSucceded,
             updateSampleFailed);
@@ -78,11 +79,10 @@
         function updateSampleSucceded(response) {
             notificationService.displaySuccess($scope.Sample.Title + ' has been updated');
             $scope.Sample = response.data;
-            SampleImage = null;
         }
 
         function updateSampleFailed(response) {
-            notificationService.displayError(response);
+            notificationService.displayError(response.data.message);
         }
 
         function openDatePicker($event) {

@@ -18,17 +18,19 @@ using SampleMag.Data.Extensions;
 
 namespace SampleMag.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "User")]
     [RoutePrefix("api/Samples")]
     public class SamplesController : ApiControllerBase
     {
         private readonly IEntityBaseRepository<Sample> _SamplesRepository;
+        private readonly IEntityBaseRepository<User> _UserRepository;
 
-        public SamplesController(IEntityBaseRepository<Sample> SamplesRepository,
+        public SamplesController(IEntityBaseRepository<Sample> SamplesRepository, IEntityBaseRepository<User> UserRepository,
             IEntityBaseRepository<Error> _errorsRepository, IUnitOfWork _unitOfWork)
             : base(_errorsRepository, _unitOfWork)
         {
             _SamplesRepository = SamplesRepository;
+            _UserRepository = UserRepository;
         }
 
         [AllowAnonymous]
@@ -76,6 +78,40 @@ namespace SampleMag.Web.Controllers
                 SampleViewModel SampleVM = Mapper.Map<Sample, SampleViewModel>(Sample);
 
                 response = request.CreateResponse<SampleViewModel>(HttpStatusCode.OK, SampleVM);
+
+                return response;
+            });
+        }
+        [AllowAnonymous]
+        [Route("genre/{id:int}")]
+        public HttpResponseMessage GetAllByGenre(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var Samples = _SamplesRepository.GetAllByGenre(id).ToList();
+
+                IEnumerable<SampleViewModel> SamplesVM = Mapper.Map<IEnumerable<Sample>, IEnumerable<SampleViewModel>>(Samples);
+
+                response = request.CreateResponse<IEnumerable<SampleViewModel>>(HttpStatusCode.OK, SamplesVM);
+
+                return response;
+            });
+        }
+        
+        [Route("user")]
+        public HttpResponseMessage GetAllByUser(HttpRequestMessage request, string username)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var User = _UserRepository.GetSingleByUsername(username);
+
+                var Samples = _SamplesRepository.GetAllByUser(User.ID).ToList();
+
+                IEnumerable<SampleViewModel> SamplesVM = Mapper.Map<IEnumerable<Sample>, IEnumerable<SampleViewModel>>(Samples);
+
+                response = request.CreateResponse<IEnumerable<SampleViewModel>>(HttpStatusCode.OK, SamplesVM);
 
                 return response;
             });
@@ -145,6 +181,9 @@ namespace SampleMag.Web.Controllers
             {
                 HttpResponseMessage response = null;
 
+                var u = _UserRepository.GetSingleByUsername(Sample.User);                
+                Sample.UserId = u.ID;
+
                 if (!ModelState.IsValid)
                 {
                     response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
@@ -183,10 +222,44 @@ namespace SampleMag.Web.Controllers
                     var SampleDb = _SamplesRepository.GetSingle(Sample.ID);
                     if (SampleDb == null)
                         response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Sample.");
+                    else if( SampleDb.User.Username != Sample.User)
+                    {
+                        response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Not your sample.");
+                    }
                     else
                     {
                         SampleDb.UpdateSample(Sample);
                         _SamplesRepository.Edit(SampleDb);
+
+                        _unitOfWork.Commit();
+                        response = request.CreateResponse<SampleViewModel>(HttpStatusCode.OK, Sample);
+                    }
+                }
+
+                return response;
+            });
+        }
+
+        [HttpPost]
+        [Route("delete")]
+        public HttpResponseMessage Delete(HttpRequestMessage request, SampleViewModel Sample)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var SampleDb = _SamplesRepository.GetSingle(Sample.ID);
+                    if (SampleDb == null)
+                        response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Sample.");
+                    else
+                    {
+                        _SamplesRepository.Delete(SampleDb);
 
                         _unitOfWork.Commit();
                         response = request.CreateResponse<SampleViewModel>(HttpStatusCode.OK, Sample);

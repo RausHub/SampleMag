@@ -9,8 +9,6 @@
         $scope.pageClass = 'page-Samples';
         $scope.Sample = {};
         $scope.loadingSample = true;
-        $scope.isReadOnly = true;
-        $scope.clearSearch = clearSearch;
 
         function loadSample() {
             $scope.loadingSample = true;
@@ -21,7 +19,6 @@
 
         function loadSampleDetails() {
             loadSample();
-            loadRentalHistory();
         }
 
         function clearSearch()
@@ -37,12 +34,6 @@
         function SampleLoadFailed(response) {
             notificationService.displayError(response.data);
         }
-
-        function rentalHistoryLoadCompleted(result) {
-            console.log(result);
-            $scope.rentalHistory = result.data;
-            $scope.loadingRentals = false;
-        }       
 
         loadSampleDetails();
     }

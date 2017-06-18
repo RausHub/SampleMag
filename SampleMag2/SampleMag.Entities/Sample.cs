@@ -13,7 +13,8 @@ namespace SampleMag.Entities
         public string Text { get; set; }
         public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
-        public string Producer { get; set; }
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
         public DateTime PublishDate { get; set; }
         public int UpVoteCount { get; set; }
         public string TrailerURI { get; set; }

@@ -1,94 +1,31 @@
-﻿<hr />
-<div class="jumbotron">
-    <div class="container text-center">
-        <img alt="{{Sample.Title}}" ng-src="../../../Content/images/Samples/{{Sample.Image}}" class="pull-left" height="120" />
-        <div class="SampleDescription"><i><i class="fa fa-quote-left"></i>{{Sample.Description}}<i class="fa fa-quote-right"></i></i></div>
-        <br />
-        <div class="btn-group">
-            <button ng-if="Sample.IsAvailable" type="button" ng-click="openRentDialog();" class="btn btn-sm btn-primary">Rent Sample<i class="fa fa-book pull-right"></i></button>
-            <a href="#/Samples/edit/{{Sample.ID}}" class="btn btn-sm btn-default">Edit Sample<i class="fa fa-pencil-square-o pull-right"></i></a>
-        </div> <!-- end btn-group -->
-    </div> <!-- end container -->
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="panel panel-primary">
+﻿<div class="row">
+    <div class="col-md-10">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h5>{{Sample.Title}}</h5>
             </div>
             <div class="panel-body" ng-if="!loadingSample">
                 <div class="media">
-                    <a class="pull-right" ng-href="#/Samples/{{Sample.ID}}" title="View {{Sample.Title}} details">
-                        <img class="media-object" height="120" ng-src="../../Content/images/Samples/{{Sample.Image}}" alt="" />
-                    </a>
                     <div class="media-body">
-                        <h4 class="media-heading">{{Sample.Title}}</h4>
-                        Directed by: <label>{{Sample.Director}}</label><br />
-                        Written by: <label>{{Sample.Writer}}</label><br />
-                        Produced by: <label>{{Sample.Producer}}</label><br />
-                        Rating: <span component-rating='{{Sample.Rating}}'></span>
+                        <h4 class="media-heading">{{Sample.Title}}</h4>                        
+                        Mag'er: <label>{{Sample.User}}</label><br />
+                        Votes: {{Sample.Upvote}}
                         <br />
+                        <p>{{Sample.Text}}</p>
                         <label class="label label-info">{{Sample.Genre}}</label>
-                        <available-Sample is-available="{{Sample.IsAvailable}}"></available-Sample>
                     </div>
                 </div>
             </div>
             <div class="panel-footer clearfix" ng-if="!loadingSample">
                 <div class="pull-right">
                     <a ng-href="{{Sample.TrailerURI}}" class="btn btn-primary fancybox-media">View Trailer <i class="fa fa-video-camera pull-right"></i></a>
-                    <a ng-href="#/Samples/edit/{{Sample.ID}}" class="btn btn-default">Edit Sample <i class="fa fa-pencil-square pull-right"></i></a>
+                    <a ng-href="#/samples/edit/{{Sample.ID}}" class="btn btn-default" ng-show="Sample.User === username">Edit Sample <i class="fa fa-pencil-square pull-right"></i></a>
                 </div>
             </div>
             <div ng-if="loadingSample">
                 <div class="col-xs-4"></div>
                 <div class="col-xs-4">
                     <i class="fa fa-refresh fa-4x fa-spin"></i> <label class="label label-primary">Loading Sample data...</label>
-                </div>
-                <div class="col-xs-4"></div>
-            </div>
-        </div>
-
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-danger shortPanel">
-            <div class="panel-heading clearfix">
-                <h5 class="pull-left">Rentals</h5>
-                <div class="input-group">
-                    <input id="inputSearchSamples" type="search" ng-model="filterRentals" class="form-control" placeholder="Filter..">
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary" ng-click="clearSearch();"><i class="glyphicon glyphicon-remove-sign"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="table-responsive" ng-if="!loadingRentals">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Rental date</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="rental in rentalHistory | filter:filterRentals">
-                            <td>{{rental.ID}}</td>
-                            <td>{{rental.Customer}}</td>
-                            <td>{{rental.RentalDate | date:'fullDate'}}</td>
-                            <td ng-class="getStatusColor(rental.Status)">{{rental.Status}}</td>
-                            <td class="text-center">
-                                <button ng-if="isBorrowed(rental)" type="button" class="btn btn-primary btn-xs" ng-click="returnSample(rental.ID)">Return</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div ng-if="loadingRentals">
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4">
-                    <i class="fa fa-refresh fa-4x fa-spin"></i> <label class="label label-primary">Loading rental history...</label>
                 </div>
                 <div class="col-xs-4"></div>
             </div>

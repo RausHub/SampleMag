@@ -60,6 +60,7 @@
     <Compile Include="Configurations\RoleConfiguration.cs" />
     <Compile Include="Configurations\UserRoleConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Extensions\SampleExtensions.cs" />
     <Compile Include="SampleMagContext.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />

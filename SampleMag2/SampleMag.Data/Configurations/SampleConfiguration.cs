@@ -14,8 +14,7 @@ namespace SampleMag.Data.Configurations
         {
             Property(m => m.Title).IsRequired().HasMaxLength(100);
             Property(m => m.GenreId).IsRequired();
-            Property(m => m.Producer).IsRequired().HasMaxLength(50);
-            Property(m => m.Producer).HasMaxLength(50);
+            Property(m => m.UserId).IsRequired();
             Property(m => m.UpVoteCount).IsRequired();
             Property(m => m.Text).IsRequired().HasMaxLength(2000);
             Property(m => m.TrailerURI).HasMaxLength(200);

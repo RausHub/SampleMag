@@ -194,6 +194,8 @@
     <Content Include="Scripts\spa\services\notificationService.js" />
     <Content Include="Scripts\spa\services\apiService.js" />
     <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Scripts\spa\user\userList.html" />
+    <Content Include="Scripts\spa\user\userListCtrl.js" />
     <Content Include="Scripts\vendors\angucomplete-alt.min.js" />
     <Content Include="Scripts\vendors\angular-base64.js" />
     <Content Include="Scripts\vendors\angular-cookies.js" />

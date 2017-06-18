@@ -20,23 +20,27 @@
                 templateUrl: "scripts/spa/account/register.html",
                 controller: "registerCtrl"
             })
-            .when("/Samples", {
+            .when("/samples", {
                 templateUrl: "scripts/spa/samples/samples.html",
                 controller: "samplesCtrl"
             })
-            .when("/Samples/add", {
-                templateUrl: "scripts/spa/Samples/add.html",
+            .when("/samples/add", {
+                templateUrl: "scripts/spa/samples/add.html",
                 controller: "sampleAddCtrl",
                 resolve: { isAuthenticated: isAuthenticated }
             })
-            .when("/Samples/:id", {
-                templateUrl: "scripts/spa/Samples/details.html",
+            .when("/samples/:id", {
+                templateUrl: "scripts/spa/samples/details.html",
                 controller: "sampleDetailsCtrl",
                 resolve: { isAuthenticated: isAuthenticated }
             })
-            .when("/Samples/edit/:id", {
-                templateUrl: "scripts/spa/Samples/edit.html",
+            .when("/samples/edit/:id", {
+                templateUrl: "scripts/spa/samples/edit.html",
                 controller: "sampleEditCtrl"
+            })
+            .when("/user/:id/list", {
+                templateUrl: "scripts/spa/user/userList.html",
+                controller: "userListCtrl"
             })
             .otherwise({ redirectTo: "/" });
     }

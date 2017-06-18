@@ -47,21 +47,15 @@ namespace SampleMag.Web.App_Start
                 "~/Scripts/spa/layout/sideBar.directive.js",
                 "~/Scripts/spa/layout/customPager.directive.js",
                 "~/Scripts/spa/directives/rating.directive.js",
-                "~/Scripts/spa/directives/availableSample.directive.js",
                 "~/Scripts/spa/account/loginCtrl.js",
                 "~/Scripts/spa/account/registerCtrl.js",
                 "~/Scripts/spa/home/rootCtrl.js",
                 "~/Scripts/spa/home/indexCtrl.js",
-                "~/Scripts/spa/customers/customersCtrl.js",
-                "~/Scripts/spa/customers/customersRegCtrl.js",
-                "~/Scripts/spa/customers/customerEditCtrl.js",
                 "~/Scripts/spa/Samples/SamplesCtrl.js",
                 "~/Scripts/spa/Samples/SampleAddCtrl.js",
                 "~/Scripts/spa/Samples/SampleDetailsCtrl.js",
                 "~/Scripts/spa/Samples/SampleEditCtrl.js",
-                "~/Scripts/spa/controllers/rentalCtrl.js",
-                "~/Scripts/spa/rental/rentSampleCtrl.js",
-                "~/Scripts/spa/rental/rentStatsCtrl.js"
+                "~/Scripts/spa/user/userListCtrl.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

@@ -14,6 +14,7 @@ namespace SampleMag.Entities
         public User()
         {
             UserRoles = new List<UserRole>();
+            Samples = new List<Sample>();
         }
         public int ID { get; set; }
         public string Username { get; set; }
@@ -24,5 +25,6 @@ namespace SampleMag.Entities
         public DateTime DateCreated { get; set; }
 
         public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<Sample> Samples { get; set; }
     }
 }

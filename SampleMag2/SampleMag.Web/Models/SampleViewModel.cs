@@ -16,6 +16,8 @@ namespace SampleMag.Web.Models
         public string Text { get; set; }
         public string Genre { get; set; }
         public int GenreId { get; set; }
+        public string User { get; set; }
+        public int UserId { get; set; }
         public string Producer { get; set; }
         public DateTime PublishDate { get; set; }
         public int Upvote { get; set; }

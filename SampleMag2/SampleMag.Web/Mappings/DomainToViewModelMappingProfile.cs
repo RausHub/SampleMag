@@ -20,7 +20,10 @@ namespace SampleMag.Web.Mappings
             Mapper.CreateMap<Sample, SampleViewModel>()
                 .ForMember(vm => vm.Upvote, map => map.MapFrom(m => m.UpVoteCount))
                 .ForMember(vm => vm.Genre, map => map.MapFrom(m => m.Genre.Name))
-                .ForMember(vm => vm.GenreId, map => map.MapFrom(m => m.Genre.ID));
+                .ForMember(vm => vm.GenreId, map => map.MapFrom(m => m.Genre.ID))
+                .ForMember(vm => vm.UserId, map => map.MapFrom(m => m.User.ID))
+                .ForMember(vm => vm.User, map => map.MapFrom(m => m.User.Username));
+
 
             Mapper.CreateMap<Genre, GenreViewModel>()
                 .ForMember(vm => vm.NumberOfSamples, map => map.MapFrom(g => g.Samples.Count()));

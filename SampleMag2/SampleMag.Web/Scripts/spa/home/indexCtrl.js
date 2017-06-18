@@ -17,7 +17,7 @@
         $scope.VoteSample = voteSample;
 
         function loadData() {
-            apiService.get('/api/Samples/popular', null,
+            apiService.get('/api/samples/popular', null,
                         SamplesLoadCompleted,
                         SamplesLoadFailed);
 
@@ -26,8 +26,7 @@
                 genresLoadFailed);
         }
 
-        function SamplesLoadCompleted(result) {
-            console.log(result);
+        function SamplesLoadCompleted(result) {            
             $scope.latestSamples = result.data;
             $scope.loadingSamples = false;
         }
@@ -41,7 +40,7 @@
         }
 
         function voteSample(Sample) {
-            apiService.post('/api/Samples/upvote', Sample,
+            apiService.post('/api/samples/upvote', Sample,
                 VotedSucces,
                 VotedFailed);
         }

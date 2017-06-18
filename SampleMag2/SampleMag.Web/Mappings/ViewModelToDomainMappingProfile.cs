@@ -19,6 +19,7 @@ namespace SampleMag.Web.Mappings
         {
             Mapper.CreateMap<SampleViewModel, Sample>()
                 //.ForMember(m => m.Image, map => map.Ignore())
+                .ForMember(m => m.User, map => map.Ignore())
                 .ForMember(m => m.Genre, map => map.Ignore());
         }
     }

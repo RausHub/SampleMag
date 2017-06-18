@@ -43,6 +43,7 @@
 
         function AddSampleModel() {
             $scope.Sample.PublishDate = new Date().toLocaleString();
+            $scope.Sample.User = $scope.username;
             $scope.Sample.Upvote = 0;
             apiService.post('/api/Samples/add', $scope.Sample,
             addSampleSucceded,
@@ -61,7 +62,6 @@
         }
 
         function addSampleFailed(response) {
-            console.log(response);
             notificationService.displayError(response.statusText);
         }
 

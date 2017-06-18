@@ -14,7 +14,7 @@ namespace SampleMag.Web.Infrastructure.Extensions
             Sample.Title = SampleVm.Title;
             Sample.GenreId = SampleVm.GenreId;
             Sample.Text = SampleVm.Text;
-            Sample.Producer = SampleVm.Producer;
+            Sample.UserId = SampleVm.UserId;
             Sample.UpVoteCount = SampleVm.Upvote;
             Sample.TrailerURI = SampleVm.TrailerURI;
             Sample.PublishDate = SampleVm.PublishDate;
