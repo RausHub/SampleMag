@@ -14,23 +14,38 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6" ng-repeat="Sample in Samples | filter:filterSamples">
-                        <div class="media">
-                            <div class="media-heading row" style="margin-left: 15px;">
-                                <a href="#/samples/{{Sample.ID}}"><h4>{{Sample.Title}}</h4></a>
-                            </div>
-                            <div class="media-body">                                                              
-                                Mag'er: <strong>{{Sample.User}}</strong>
-                                <p>{{Sample.Text}}</p>
-                                <a class="fancybox-media text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
-                            </div>
-                            <div class="media-bottom">
-                                <a ng-click="VoteSample(Sample)"><img src="../../../Content/images/samplemag/upvote.png" /></a>
-                                <span>Votes: {{Sample.Upvote}}</span>
-                                <label class="label label-info">{{Sample.Genre}}</label>
-                            </div>
-                            
+                    <div ng-if="loadingSamples">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                            <i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading Samples...</label>
                         </div>
+                        <div class="col-xs-4"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6" ng-repeat="Sample in Samples | filter:filterSamples">
+                      
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <a href="#/samples/{{Sample.ID}}">
+                                        <strong>{{Sample.Title}} </strong>
+                                    </a>
+                                    <label class="label label-success pull-right">{{Sample.User}}</label>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div><small>{{Sample.Text | limitTo: 70}}...</small></div>
+                                            <label class="label label-success">{{Sample.Genre}}</label><br />
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a ng-click="VoteSample(Sample)"><img src="../../../Content/images/samplemag/upvote.png" /></a>
+                                    <span>Votes: {{Sample.Upvote}}</span>
+                                    <a class="fancybox-media pull-right text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
+                                </div>
+                            </div>
+                      
                         <br /><br />
                     </div>
                 </div>

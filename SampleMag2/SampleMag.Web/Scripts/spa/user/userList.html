@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-success" id="panelLatestSamples">
+            <div class="panel-heading">
+                <h3 class="panel-title">Latest Samples Released</h3>
+            </div>
+            <div class="panel-body">
+                <div ng-if="loadingSamples">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading Samples...</label>
+                    </div>
+                </div>
+                <div class="col-md-6 Sample" ng-repeat="Sample in Samples">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <strong>{{Sample.Title}} </strong>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div><small>{{Sample.Text}}</small></div>
+                                    <a class="fancybox-media pull-right text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
+                                    <label class="label label-success">{{Sample.Genre}}</label><br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a ng-href="#/samples/edit/{{Sample.ID}}" class="btn btn-default" ng-show="Sample.User === username">Edit Sample <i class="fa fa-pencil-square pull-right"></i></a>
+                            <a ng-click="DeleteSample(Sample)"><img src="../../../Content/images/samplemag/downvote.png" /></a>
+                            <span class="pull-right">Votes: {{Sample.Upvote}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

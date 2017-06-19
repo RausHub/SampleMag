@@ -1,0 +1,63 @@
+﻿<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-success">
+
+            <div class="panel-heading">
+                <h4 class="panel-title pull-left" style="padding-top: 7.5px;">SampleMag Samples</h4>
+                <div class="input-group">
+                    <select class="form-control shortInputSearch" ng-model="selectedGenre" ng-change="GenreChanged()">
+                        <option value="0" selected>All</option>
+                        <option value="1">Alternative</option>
+                        <option value="2">Electro</option>
+                        <option value="3">Pop</option>
+                        <option value="4">Hiphop</option>
+                    </select>
+                    <input id="inputSearchSamples" type="search" ng-model="filterSamples"class="form-control shortInputSearch" placeholder="Filter, search Samples..">
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" ng-click="search()"><i class="glyphicon glyphicon-search"></i></button>
+                        <button class="btn btn-success" ng-click="clearSearch()"><i class="glyphicon glyphicon-remove-sign"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div ng-if="loadingSamples">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                            <i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading Samples...</label>
+                        </div>
+                        <div class="col-xs-4"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6" ng-repeat="Sample in Samples | filter:filterSamples | orderBy:'-Upvote'">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#/samples/{{Sample.ID}}">
+                                    <strong>{{Sample.Title}} </strong>
+                                </a>
+                                <label class="label label-success pull-right">{{Sample.User}}</label>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div><small>{{Sample.Text | limitTo: 70}}...</small></div>
+                                        <label class="label label-success">{{Sample.Genre}}</label><br />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <a ng-click="VoteSample(Sample)"><img src="../../../Content/images/samplemag/upvote.png" /></a>
+                                <span>Votes: {{Sample.Upvote}}</span>
+                                <a class="fancybox-media pull-right text-success" ng-href="{{Sample.TrailerURI}}">Sample<i class="fa fa-video-camera fa-fw"></i></a>
+                            </div>
+                        </div>
+
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -84,12 +84,19 @@ namespace SampleMag.Web.Controllers
         }
         [AllowAnonymous]
         [Route("genre/{id:int}")]
-        public HttpResponseMessage GetAllByGenre(HttpRequestMessage request, int id)
+        public HttpResponseMessage GetAllByGenre(HttpRequestMessage request, int? id)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var Samples = _SamplesRepository.GetAllByGenre(id).ToList();
+                var Samples = new List<Sample>();
+                if (id != null && 0<id && id < 5)
+                {
+                   Samples = _SamplesRepository.GetAllByGenre((int)id).OrderBy(x => x.PublishDate).ToList();
+                } else
+                {
+                    Samples = _SamplesRepository.GetAll().OrderBy(x => x.PublishDate).ToList();
+                }               
 
                 IEnumerable<SampleViewModel> SamplesVM = Mapper.Map<IEnumerable<Sample>, IEnumerable<SampleViewModel>>(Samples);
 

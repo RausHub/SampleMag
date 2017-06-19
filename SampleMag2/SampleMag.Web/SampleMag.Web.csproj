@@ -182,6 +182,8 @@
     <Content Include="Scripts\spa\samples\sampleEditCtrl.js" />
     <Content Include="Scripts\spa\samples\sampleAddCtrl.js" />
     <Content Include="Scripts\spa\samples\sampleDetailsCtrl.js" />
+    <Content Include="Scripts\spa\samples\samplesExtended.html" />
+    <Content Include="Scripts\spa\samples\samplesExtendedCtrl.js" />
     <Content Include="Scripts\spa\samples\samplesCtrl.js" />
     <Content Include="Scripts\spa\home\indexCtrl.js" />
     <Content Include="Scripts\spa\home\rootCtrl.js" />

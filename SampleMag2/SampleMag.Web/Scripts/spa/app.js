@@ -24,6 +24,10 @@
                 templateUrl: "scripts/spa/samples/samples.html",
                 controller: "samplesCtrl"
             })
+            .when("/samplesextended", {
+                templateUrl: "scripts/spa/samples/samplesExtended.html",
+                controller: "samplesExtendedCtrl"
+            })
             .when("/samples/add", {
                 templateUrl: "scripts/spa/samples/add.html",
                 controller: "sampleAddCtrl",

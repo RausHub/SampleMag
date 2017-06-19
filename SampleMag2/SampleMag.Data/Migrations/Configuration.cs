@@ -17,7 +17,7 @@ namespace SampleMag.Data.Migrations
         protected override void Seed(SampleMagContext context)
         {
             // username: jelle, password: homecinema
-            context.UserSet.AddOrUpdate (u => u.Email, GenerateUser());
+            context.UserSet.AddOrUpdate(u => u.Email, GenerateUser());
 
             //  create genres
             context.GenreSet.AddOrUpdate(g => g.Name, GenerateGenres());
@@ -27,7 +27,7 @@ namespace SampleMag.Data.Migrations
 
             // create roles
             context.RoleSet.AddOrUpdate(r => r.Name, GenerateRoles());
-            
+
             // // create user-admin for chsakell
             context.UserRoleSet.AddOrUpdate(new UserRole[] {
                 new UserRole() {
@@ -41,7 +41,8 @@ namespace SampleMag.Data.Migrations
             });
         }
 
-        private User[] GenerateUser() {
+        private User[] GenerateUser()
+        {
             User[] users = new User[]
             {
                 new User()
@@ -83,144 +84,147 @@ namespace SampleMag.Data.Migrations
         {
             Sample[] Samples = new Sample[] {
                 new Sample()
-                {   Title="Minions",
-                    GenreId = 1,
+                {   Title="Minimal House Running",
+                    GenreId = 2,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 7, 10), 
-                    UpVoteCount = 2, 
-                    Text = "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=Wfql_DoHRKc" 
+                    PublishDate = new DateTime(2017, 6, 10),
+                    UpVoteCount = 2,
+                    Text = "Best Music charts: Gaming Music, Coronita, New Best Club Dance Festival Music Remixes, Workout Music, EDM minimal, Electro house, Car Music, Future Partymusik",
+                    TrailerURI = "https://www.youtube.com/watch?v=Vfbl7snaLZw"
                 },
                 new Sample()
-                {   Title="Ted 2", 
-                    GenreId = 1,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 6, 27),
+                {   Title="Droplex",
+                    GenreId = 2,
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 6, 17),
                     UpVoteCount = 7,
-                    Text = "Newlywed couple Ted and Tami-Lynn want to have a baby, but in order to qualify to be a parent, Ted will have to prove he's a person in a court of law.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=S3AVcCggRnU" 
+                    Text = "Best Music charts: Weed Minimal Tecnho Gaming Music, Coronita, New Best Club Dance Festival Music Remixes, Workout Music, EDM minimal, Car Music, Future Partymusik",
+                    TrailerURI = "https://www.youtube.com/watch?v=kVdDYd67WNs&t=1954s"
                 },
                 new Sample()
-                {   Title="Trainwreck", 
-                    GenreId = 2,
+                {   Title="The Dead South",
+                    GenreId = 1,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 7, 17),
+                    PublishDate = new DateTime(2017, 6, 16),
                     UpVoteCount = 5,
-                    Text = "Having thought that monogamy was never possible, a commitment-phobic career woman may have to face her fears when she meets a good guy.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=2MxnhBPoIx4" 
+                    Text = "Directed by Zach Wilson of Two Brothers Films. We recognize and thank Creative Saskatchewan for their financial support in the production of this video.",
+                    TrailerURI = "https://www.youtube.com/watch?v=B9FzVhw8_bY"
                 },
                 new Sample()
-                {   Title="Inside Out", 
+                {   Title="Thunderstruck by Steve'n'Seagulls",
                     GenreId = 1,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 6, 19),
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 6, 19),
                     UpVoteCount = 9,
-                    Text = "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=seMwpP0yeu4" 
+                    Text = "Finnish band called Steve'n'Seagulls plays AC/DC's awesome song called Thunderstruck. Recorded by Jaakko Manninen Photography. TOUR DATES HERE: www.stevenseagulls.com / gigs",
+                    TrailerURI = "https://www.youtube.com/watch?v=e4Ao-iNPPUc"
                 },
                 new Sample()
-                {   Title="Home", 
+                {   Title="Blue October - Hate Me",
                     GenreId = 1,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 5, 27),
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 5, 27),
                     UpVoteCount = 2,
-                    Text = "Oh, an alien on the run from his own people, lands on Earth and makes friends with the adventurous Tip, who is on a quest of her own.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=MyqZf8LiWvM" 
+                    Text = "Music video by Blue October performing Hate Me (10th Anniversary) [Live]. (C) 2015 Up Down Records",
+                    TrailerURI = "https://www.youtube.com/watch?v=Y3F3AcnGFWw"
                 },
                 new Sample()
-                {   Title="Batman v Superman: Dawn of Justice", 
+                {   Title="Best Of EDM Mix",
                     GenreId = 2,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 3, 25),
+                    PublishDate = new DateTime(2017, 3, 25),
                     UpVoteCount = 2,
-                    Text = "Fearing the actions of a god-like Super Hero left unchecked, Gotham City's own formidable, forceful vigilante takes on Metropolis most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it's ever known before.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=0WWzgGyAH6Y" 
+                    Text = "More Free Music: http://goo.gl/hUpPJV - Watch Volume 3 from this Video: https://youtu.be/l2yNR3ZUFw0 - Watch Volume 2 from this Video: https://youtu.be/0_ltN44SfRU - Watch Volume 1 from this Video: https://youtu.be/_B789lus-JE",
+                    TrailerURI = "https://www.youtube.com/watch?v=_B789lus-JE"
                 },
                 new Sample()
-                {   Title="Ant-Man", 
+                {   Title="BEST ELECTRO HOUSE BASS ",
                     GenreId = 2,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 7, 17),
+                    PublishDate = new DateTime(2017, 5, 17),
                     UpVoteCount = 2,
-                    Text = "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=1HpZevFifuo" 
+                    Text = "BASS BOOSTED MUSIC 2017 BEST ELECTRO HOUSE BASS & BOUNCE TRAP MIX 2017 | Car Music Mix 2017 | Festival Mix 2017 | TRAP MUSIC 2017 | Best Of EDM. Support me: Youtube ? http://bit.ly/1WEUJtV Like my Facebook Page ? https://www.facebook.com/DJTecknoboy",
+                    TrailerURI = "https://www.youtube.com/watch?v=dGk5Fx5MwgU"
                 },
                 new Sample()
-                {   Title="Jurassic World", 
+                {   Title="TRAP MUSIC 2017",
                     GenreId = 2,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 6, 12),
+                    PublishDate = new DateTime(2017, 6, 12),
                     UpVoteCount = 2,
-                    Text = "A new theme park is built on the original site of Jurassic Park. Everything is going well until the park's newest attraction--a genetically modified giant stealth killing machine--escapes containment and goes on a killing spree.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=RFinNxS5KN4" 
+                    Text = "Magic Music on Facebook: https://fb.me/magicmusicsquad",
+                    TrailerURI = "https://www.youtube.com/watch?v=d3ggCpV2ff0"
                 },
                 new Sample()
-                {   Title="Fantastic Four", 
+                {   Title="Minimal Techno (March 2017)",
                     GenreId = 2,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 8, 7),
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 4, 7),
                     UpVoteCount = 2,
-                    Text = "Four young outsiders teleport to an alternate and dangerous universe which alters their physical form in shocking ways. The four must learn to harness their new abilities and work together to save Earth from a former friend turned enemy.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=AAgnQdiZFsQ" 
+                    Text = "1. 00:00 Chris Lawyer - Right On Time (Original Uncut Mix); 2. 02:58 Eminem - Without - Me(Semperger G Remix); 3. 05:48 ZHU - Faded(DOUB Remix); 4. 12:03 Droplex - Killa Kokain(Original mix); 5. 13:38 Droplex - Psychological Attack(Original Mix)"+
+                        "; 6. 16:19 Droplex & Breech - Brain Crackin(Original Mix); 7. 20:34 Duane Bartolo -Good For YOU(Minimal Men Remix); 8. 24:50 Cosmonov - Black Magic 2016(Original Mix); 9. 30:36 Eiffel 65 - Blue(Dani Row Private Remix)"+
+                        "; 10. 34:10 Jus Deelax -Baileys(Original Mix); 11. 38:40 Oriol Carrio, Jus Deelax - Tetris 2014(Extended Mix); 12. 42:55 Kalus - Fuck Off & Die(Tommy Salter Remix); 13. 47:25 Danny Darko &Jova Radevska - Time Will Tell(Droplex Remix)",
+                    TrailerURI = "https://www.youtube.com/watch?v=A-Dnu5UaEVc"
                 },
                 new Sample()
-                {   Title="Mad Max: Fury Road", 
+                {   Title="Deep House (2017)",
                     GenreId = 2,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 5, 15),
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 5, 15),
                     UpVoteCount = 2,
-                    Text = "In a stark desert landscape where humanity is broken, two rebels just might be able to restore order: Max, a man of action and of few words, and Furiosa, a woman of action who is looking to make it back to her childhood homeland.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=hEJnMQG9ev8" 
+                    Text = "All the tracks and image art used in our video are the property of their respective owners. No copyright infringement intended strictly for promotional use. Will remove if requested by record labels.",
+                    TrailerURI = "https://www.youtube.com/watch?v=1nQ6-HHUNAo"
                 },
                 new Sample()
-                {   Title="True Detective", 
+                {   Title="Jason Derulo - Swalla (feat. Nicki Minaj & Ty Dolla $ign)",
                     GenreId = 3,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 5, 15),
+                    PublishDate = new DateTime(2017, 5, 15),
                     UpVoteCount = 2,
-                    Text = "An anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=TXwCoNwBSkQ" 
+                    Text = "Official Music video for 'Swalla' - directed by Gil Green Buy or Stream now! http://wbr.lnk.to/swalla",
+                    TrailerURI = "https://www.youtube.com/watch?v=NGLxoKOvzu4"
                 },
                 new Sample()
-                {   Title="The Longest Ride", 
+                {   Title="The Notorious B.I.G. - Big Poppa",
                     GenreId = 4,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 5, 15),
+                    PublishDate = new DateTime(2017, 5, 18),
                     UpVoteCount = 2,
-                    Text = "After an automobile crash, the lives of a young couple intertwine with a much older man, as he reflects back on a past love.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=FUS_Q7FsfqU" 
+                    Text = "Big Poppa by The Notorious B.I.G. From The Notorious B.I.G. album Ready To Die (1994).",
+                    TrailerURI = "https://www.youtube.com/watch?v=phaJXp_zMYM"
                 },
                 new Sample()
-                {   Title="The Walking Dead", 
+                {   Title="2pac feat Dr.Dre - California Love",
                     GenreId = 4,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 3, 28),
+                    PublishDate = new DateTime(2017, 6, 2),
                     UpVoteCount = 2,
-                    Text = "Sheriff's Deputy Rick Grimes leads a group of survivors in a world overrun by zombies.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=R1v0uFms68U" 
+                    Text = "Let's show these fools how we do it on this on that west side. Cause you and I know it's the best side. Yea that's right, west coast we coast, Uh California love, California love",
+                    TrailerURI = "https://www.youtube.com/watch?v=5wBTdfAkqGU"
                 },
                 new Sample()
-                {   Title="Southpaw", 
+                {   Title="Justin Bieber - What Do You Mean?",
                     GenreId = 3,
-                    UserId = 1,
-                    PublishDate = new DateTime(2015, 8, 17),
+                    UserId = 2,
+                    PublishDate = new DateTime(2017, 4, 27),
                     UpVoteCount = 2,
-                    Text = "Boxer Billy Hope turns to trainer Tick Willis to help him get his life back on track after losing his wife in a tragic accident and his daughter to child protection services.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=Mh2ebPxhoLs" 
+                    Text = "‘Purpose’ Available Everywhere Now! iTunes: http://smarturl.it/PurposeDlx?IQid=VE... Add To Your Spotify Playlist: http://smarturl.it/sPurpose?IQid=VEVO... Google Play: http://smarturl.it/gPurpose?IQid=VEVO..."+
+                        "Amazon: http://smarturl.it/aPurpose?IQid=VEVO... ",
+                    TrailerURI = "https://www.youtube.com/watch?v=DK_0jXPuIr0"
                 },
                 new Sample()
-                {   Title="Specter", 
+                {   Title="Kygo, Martin Garrix ft. Sia - Our Time",
                     GenreId = 3,
                     UserId = 1,
-                    PublishDate = new DateTime(2015, 11, 5),
+                    PublishDate = new DateTime(2017, 6, 5),
                     UpVoteCount = 2,
-                    Text = "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.", 
-                    TrailerURI = "https://www.youtube.com/watch?v=LTDaET-JweU" 
+                    Text = "Kygo, The Chainsmokers, Martin Garrix ft. Selena Gomez - Best Deep House Music Mix 2017 Remixes & Chillout Songs",
+                    TrailerURI = "https://www.youtube.com/watch?v=3FiH9K9F2U0"
                 },
             };
 
             return Samples;
-        }        
+        }
         private Role[] GenerateRoles()
         {
             Role[] _roles = new Role[]{
@@ -231,6 +235,6 @@ namespace SampleMag.Data.Migrations
             };
 
             return _roles;
-        }        
+        }
     }
 }

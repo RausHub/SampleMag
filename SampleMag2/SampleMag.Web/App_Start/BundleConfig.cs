@@ -54,6 +54,7 @@ namespace SampleMag.Web.App_Start
                 "~/Scripts/spa/Samples/SamplesCtrl.js",
                 "~/Scripts/spa/Samples/SampleAddCtrl.js",
                 "~/Scripts/spa/Samples/SampleDetailsCtrl.js",
+                "~/Scripts/spa/Samples/SamplesExtendedCtrl.js",
                 "~/Scripts/spa/Samples/SampleEditCtrl.js",
                 "~/Scripts/spa/user/userListCtrl.js"
                 ));
